@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#071B49" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,600;1,700;1,800&display=swap" rel="stylesheet" />
   <style>
     :root {
       --navy: #071B49;
@@ -31,7 +31,7 @@
     body { -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision; }
     body {
       margin: 0;
-      font-family: "Inter Tight", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-family: Inter, Arial, sans-serif;
       color: var(--ink);
       background: var(--white);
       line-height: 1.6;
@@ -60,7 +60,7 @@
     .section-title h2 {
       margin: 14px 0 12px;
       color: var(--navy);
-      font-family: "Inter Tight", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-family: Inter, Arial, sans-serif;
       font-size: clamp(34px, 4vw, 52px);
       line-height: 1.08;
       letter-spacing: -.03em;
@@ -126,7 +126,7 @@
       object-fit: contain;
       padding: 4px;
     }
-    .brand-text strong { display: block; color: var(--navy); font-family: "Inter Tight", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; font-size: 20px; letter-spacing: .02em; line-height: 1.05; }
+    .brand-text strong { display: block; color: var(--navy); font-family: Inter, Arial, sans-serif; font-size: 20px; letter-spacing: .02em; line-height: 1.05; }
     .brand-text span { display: block; color: var(--muted); font-size: 12px; font-weight: 800; letter-spacing: .26em; margin-top: 5px; }
     nav ul { display: flex; align-items: center; gap: 4px; list-style: none; padding: 0; margin: 0; }
     nav a { display: inline-flex; padding: 10px 12px; border-radius: 999px; color: #263855; font-size: 14px; font-weight: 760; }
@@ -157,7 +157,7 @@
     .hero h1 {
       margin: 18px 0 18px;
       color: var(--navy);
-      font-family: "Inter Tight", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-family: Inter, Arial, sans-serif;
       font-size: clamp(44px, 5.4vw, 76px);
       line-height: .98;
       letter-spacing: -.045em;
@@ -246,7 +246,7 @@
     }
     .partner-band::after { content: "500+"; position: absolute; right: 24px; bottom: -64px; font-size: 178px; line-height: 1; font-weight: 950; color: rgba(255,255,255,.055); letter-spacing: -.08em; }
     .partner-number { font-size: clamp(68px, 9vw, 118px); font-weight: 950; line-height: .82; letter-spacing: -.08em; color: var(--gold-2); }
-    .partner-band h2 { margin: 0 0 14px; font-family: "Inter Tight", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.08; }
+    .partner-band h2 { margin: 0 0 14px; font-family: Inter, Arial, sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.08; }
     .partner-band p { margin: 0; color: rgba(255,255,255,.78); font-size: 18px; }
 
     .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; counter-reset: step; }
@@ -378,7 +378,7 @@
 
     .split { display: grid; grid-template-columns: .95fr 1.05fr; gap: 42px; align-items: start; }
     .feature-box { background: #fff; border: 1px solid rgba(7,27,73,.1); border-radius: 30px; padding: 32px; box-shadow: var(--shadow); }
-    .feature-box h2 { color: var(--navy); font-family: "Inter Tight", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; font-size: clamp(32px, 4vw, 48px); line-height: 1.08; margin: 12px 0 14px; }
+    .feature-box h2 { color: var(--navy); font-family: Inter, Arial, sans-serif; font-size: clamp(32px, 4vw, 48px); line-height: 1.08; margin: 12px 0 14px; }
     .feature-box p { color: var(--muted); margin: 0 0 22px; }
     .qualification-list { display: grid; gap: 12px; margin-top: 22px; }
     .qualification-list div { display: flex; gap: 12px; align-items: flex-start; padding: 14px; border: 1px solid var(--line); border-radius: 18px; background: #fbfcff; }
@@ -410,16 +410,76 @@
     .avatar { width: 42px; height: 42px; border-radius: 50%; background: #eef3fb; display: grid; place-items: center; color: var(--navy); }
 
     .faq { max-width: 920px; margin: 0 auto; display: grid; gap: 14px; }
-    .faq-item { background: white; border: 1px solid rgba(7,27,73,.1); border-radius: 20px; overflow: hidden; box-shadow: 0 12px 28px rgba(7,27,73,.055); }
-    .faq-button { width: 100%; border: 0; background: white; padding: 22px 24px; text-align: left; color: var(--navy); font-size: 17px; font-weight: 850; display: flex; justify-content: space-between; gap: 14px; cursor: pointer; }
-    .faq-button span:last-child { font-size: 24px; line-height: 1; color: var(--gold); }
-    .faq-content { max-height: 0; overflow: hidden; transition: max-height .25s ease; }
-    .faq-content p { margin: 0; padding: 0 24px 22px; color: var(--muted); }
-    .faq-item.open .faq-content { max-height: 240px; }
+    .faq-item {
+      background: white;
+      border: 1px solid rgba(7,27,73,.1);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(7,27,73,.055);
+      transition: border-color .28s ease, box-shadow .28s ease, transform .28s ease;
+    }
+    .faq-item.open {
+      border-color: rgba(11, 63, 140, .24);
+      box-shadow: 0 18px 38px rgba(7,27,73,.09);
+    }
+    .faq-button {
+      width: 100%;
+      border: 0;
+      background: white;
+      padding: 22px 24px;
+      text-align: left;
+      color: var(--navy);
+      font-size: 17px;
+      font-weight: 850;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      cursor: pointer;
+    }
+    .faq-button:hover { background: #f8fcff; }
+    .faq-question { flex: 1; }
+    .faq-icon {
+      width: 34px;
+      height: 34px;
+      flex: 0 0 34px;
+      border-radius: 50%;
+      background: rgba(200, 164, 93, .14);
+      color: var(--gold);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      line-height: 1;
+      font-weight: 700;
+      transition: transform .35s ease, background .35s ease, color .35s ease;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+      background: var(--navy);
+      color: #ffffff;
+    }
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height .42s cubic-bezier(.4, 0, .2, 1), opacity .28s ease;
+    }
+    .faq-item.open .faq-content { opacity: 1; }
+    .faq-inner {
+      padding: 0 24px 24px;
+      color: var(--muted);
+      transform: translateY(-5px);
+      transition: transform .35s ease;
+    }
+    .faq-item.open .faq-inner { transform: translateY(0); }
+    .faq-inner p { margin: 0; color: var(--muted); }
+    .faq-inner ul { margin: 12px 0 0; padding-left: 20px; color: var(--muted); }
+    .faq-inner li { margin: 6px 0; }
 
     .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 24px; align-items: start; }
     .contact-card { background: var(--navy); color: white; border-radius: 32px; padding: 34px; box-shadow: var(--shadow); }
-    .contact-card h2 { margin: 14px 0 12px; font-family: "Inter Tight", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; font-size: 42px; line-height: 1.08; }
+    .contact-card h2 { margin: 14px 0 12px; font-family: Inter, Arial, sans-serif; font-size: 42px; line-height: 1.08; }
     .contact-card p { color: rgba(255,255,255,.78); margin: 0 0 24px; }
     .contact-lines { display: grid; gap: 14px; }
     .contact-line { display: flex; gap: 12px; align-items: flex-start; padding: 14px; border: 1px solid rgba(255,255,255,.13); border-radius: 18px; background: rgba(255,255,255,.06); }
@@ -532,7 +592,7 @@
       margin: 0;
       max-width: 560px;
       color: #061E5A;
-      font-family: "Inter Tight", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-family: Inter, Arial, sans-serif;
       font-size: clamp(39px, 4.15vw, 50px);
       line-height: .9;
       letter-spacing: -.07em;
@@ -832,7 +892,7 @@
 
     /* Hero typography matched with the rest of the page */
     .hero h1 {
-      font-family: "Inter Tight", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+      font-family: Inter, Arial, sans-serif !important;
       font-weight: 850 !important;
       letter-spacing: -.035em !important;
       line-height: 1.05 !important;
@@ -840,7 +900,7 @@
     }
 
     .hero-check-list li {
-      font-family: "Inter Tight", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+      font-family: Inter, Arial, sans-serif !important;
       font-weight: 760 !important;
       letter-spacing: -.02em !important;
       line-height: 1.3 !important;
@@ -848,7 +908,7 @@
     }
 
     .hero-actions .btn {
-      font-family: "Inter Tight", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+      font-family: Inter, Arial, sans-serif !important;
       font-weight: 800 !important;
       letter-spacing: 0 !important;
       font-size: 16px !important;
@@ -1499,7 +1559,380 @@
       -webkit-backdrop-filter: none !important;
     }
 
-  </style>
+
+
+    /* === Header navigation underline animation: logo-matched navy accent === */
+    #mainNav ul {
+      gap: 18px !important;
+    }
+
+    #mainNav a {
+      position: relative !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      padding: 30px 0 28px !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+      color: #263855 !important;
+      transition: color .24s ease !important;
+    }
+
+    #mainNav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 20px;
+      width: 0;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #082558, #0B3F8C);
+      box-shadow: 0 8px 18px rgba(8, 37, 88, .22);
+      transition: width .28s ease;
+    }
+
+    #mainNav a:hover,
+    #mainNav a.active {
+      color: var(--navy) !important;
+      background: transparent !important;
+    }
+
+    #mainNav a:hover::after,
+    #mainNav a.active::after {
+      width: 100%;
+    }
+
+    @media (max-width: 980px) {
+      #mainNav ul {
+        gap: 0 !important;
+      }
+
+      #mainNav a {
+        width: 100% !important;
+        padding: 13px 14px !important;
+        border-radius: 12px !important;
+      }
+
+      #mainNav a::after {
+        display: none !important;
+      }
+
+      #mainNav a:hover,
+      #mainNav a.active {
+        background: rgba(8, 37, 88, .10) !important;
+        color: #082558 !important;
+      }
+    }
+
+
+    /* === Font alignment with the reference website === */
+    :root {
+      --hero-font: "Playfair Display", Georgia, serif;
+    }
+
+    body,
+    button,
+    input,
+    select,
+    textarea,
+    nav a,
+    .btn,
+    .topbar,
+    .brand-text,
+    .hero h1,
+    .hero-check-list li,
+    .service-showcase-card,
+    .service-showcase-card *,
+    .section-title p,
+    .bank-logo-head p,
+    .way-head p,
+    .benefit-item p,
+    .card p,
+    .faq-content p,
+    footer p,
+    footer a,
+    footer li {
+      font-family: Inter, Arial, sans-serif !important;
+    }
+
+    .section-title h2,
+    .bank-logo-head h2,
+    .partner-band h2,
+    .way-head h2,
+    .way-step h3,
+    .benefits-head h2,
+    .benefit-item h3,
+    .feature-box h2,
+    .contact-card h2,
+    .embed-box h3,
+    .card h3,
+    .step h3,
+    .service-title-row h3,
+    .faq-button span:first-child,
+    footer h3,
+    footer h4 {
+      font-family: var(--hero-font) !important;
+      font-style: italic !important;
+      font-weight: 700 !important;
+      letter-spacing: -0.02em !important;
+    }
+
+    .hero h1,
+    .brand-text strong,
+    .brand-text span {
+      font-style: normal !important;
+    }
+
+  
+
+    /* === Services title like the reference, matched to the logo colors === */
+    .services-title {
+      max-width: 980px !important;
+      margin: 0 auto 48px !important;
+      text-align: center !important;
+    }
+
+    .services-title .services-eyebrow {
+      margin: 0 0 12px !important;
+      color: #0B3F8C !important;
+      font-family: Inter, Arial, sans-serif !important;
+      font-size: 13px !important;
+      line-height: 1.1 !important;
+      font-weight: 900 !important;
+      letter-spacing: .14em !important;
+      text-transform: uppercase !important;
+    }
+
+    .services-title h2 {
+      margin: 0 !important;
+      color: #082558 !important;
+      font-family: var(--hero-font) !important;
+      font-style: italic !important;
+      font-weight: 700 !important;
+      font-size: clamp(34px, 5vw, 60px) !important;
+      line-height: 1.05 !important;
+      letter-spacing: -0.04em !important;
+    }
+
+    .services-title-line {
+      width: 60px;
+      height: 3px;
+      margin: 22px auto 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #082558, #0B3F8C);
+    }
+
+    @media (max-width: 760px) {
+      .services-title {
+        margin-bottom: 36px !important;
+      }
+
+      .services-title h2 {
+        font-size: clamp(32px, 10vw, 44px) !important;
+      }
+    }
+
+
+    /* === Matching underline below the remaining section titles === */
+    .bank-logo-head h2,
+    .way-head h2,
+    .benefits-head h2,
+    .section-title:not(.services-title) h2 {
+      position: relative !important;
+      padding-bottom: 24px !important;
+    }
+
+    .bank-logo-head h2::after,
+    .way-head h2::after,
+    .benefits-head h2::after,
+    .section-title:not(.services-title) h2::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 60px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #082558, #0B3F8C);
+      transform: translateX(-50%);
+    }
+
+    .bank-logo-head p,
+    .way-head p,
+    .section-title:not(.services-title) p {
+      margin-top: 14px !important;
+    }
+
+    @media (max-width: 760px) {
+      .bank-logo-head h2,
+      .way-head h2,
+      .benefits-head h2,
+      .section-title:not(.services-title) h2 {
+        padding-bottom: 20px !important;
+      }
+
+      .bank-logo-head h2::after,
+      .way-head h2::after,
+      .benefits-head h2::after,
+      .section-title:not(.services-title) h2::after {
+        width: 52px;
+      }
+    }
+
+
+
+    /* === Dark finance strip matched to reference sizing === */
+    .finance-trust-strip {
+      padding: 0 !important;
+      margin: 0 !important;
+      background: #061a4a !important;
+      overflow: hidden !important;
+    }
+
+    .finance-trust-strip .container {
+      width: min(1480px, 100%) !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+    }
+
+    .finance-strip-box {
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      min-height: 150px !important;
+      overflow: hidden !important;
+      color: #ffffff !important;
+      background: linear-gradient(135deg, #061f59 0%, #041541 100%) !important;
+      border-radius: 0 !important;
+      box-shadow: 0 18px 45px rgba(7, 27, 73, .16) !important;
+    }
+
+    .finance-strip-item {
+      display: grid !important;
+      grid-template-columns: 78px minmax(0, 1fr) !important;
+      align-items: center !important;
+      gap: 24px !important;
+      min-height: 150px !important;
+      padding: 34px 44px !important;
+      border-right: 1px solid rgba(255, 255, 255, .16) !important;
+      background: transparent !important;
+    }
+
+    .finance-strip-item:last-child {
+      border-right: 0 !important;
+    }
+
+    .finance-strip-icon {
+      width: 60px !important;
+      height: 60px !important;
+      object-fit: contain !important;
+      display: block !important;
+      filter: none !important;
+    }
+
+    .finance-strip-number {
+      display: block !important;
+      margin: 0 0 8px !important;
+      color: #57bdff !important;
+      font-family: Inter, Arial, sans-serif !important;
+      font-size: 42px !important;
+      line-height: 1 !important;
+      font-weight: 900 !important;
+      letter-spacing: -.04em !important;
+    }
+
+    .finance-strip-title {
+      display: block !important;
+      margin: 0 0 6px !important;
+      color: #ffffff !important;
+      font-family: Inter, Arial, sans-serif !important;
+      font-size: 15px !important;
+      line-height: 1.25 !important;
+      font-weight: 900 !important;
+      letter-spacing: .08em !important;
+      text-transform: uppercase !important;
+    }
+
+    .finance-strip-content p {
+      max-width: 300px !important;
+      margin: 0 !important;
+      color: rgba(255, 255, 255, .78) !important;
+      font-family: Inter, Arial, sans-serif !important;
+      font-size: 15px !important;
+      line-height: 1.55 !important;
+      font-weight: 500 !important;
+    }
+
+    @media (max-width: 1180px) {
+      .finance-trust-strip .container {
+        width: 100% !important;
+      }
+
+      .finance-strip-item {
+        grid-template-columns: 64px minmax(0, 1fr) !important;
+        gap: 20px !important;
+        padding: 30px 28px !important;
+      }
+
+      .finance-strip-icon {
+        width: 54px !important;
+        height: 54px !important;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .finance-strip-box {
+        grid-template-columns: 1fr !important;
+        min-height: 0 !important;
+      }
+
+      .finance-strip-item {
+        grid-template-columns: 58px 1fr !important;
+        min-height: auto !important;
+        padding: 28px 22px !important;
+        border-right: 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, .16) !important;
+      }
+
+      .finance-strip-item:last-child {
+        border-bottom: 0 !important;
+      }
+
+      .finance-strip-icon {
+        width: 48px !important;
+        height: 48px !important;
+      }
+
+      .finance-strip-number {
+        font-size: 34px !important;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .finance-strip-item {
+        grid-template-columns: 52px 1fr !important;
+        gap: 16px !important;
+        padding: 24px 18px !important;
+      }
+
+      .finance-strip-icon {
+        width: 44px !important;
+        height: 44px !important;
+      }
+
+      .finance-strip-number {
+        font-size: 30px !important;
+      }
+
+      .finance-strip-title {
+        font-size: 13px !important;
+      }
+
+      .finance-strip-content p {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+      }
+    }
+
+</style>
 </head>
 <body>
   <header>
@@ -1518,8 +1951,8 @@
         <ul>
           <li><a href="#leistungen">Leistungen</a></li>
           <li><a href="#partnerbanken">Partnerbanken</a></li>
-          <li><a href="#ablauf">Ablauf</a></li>
           <li><a href="#ueber-mich">Vorteile</a></li>
+          <li><a href="#ablauf">Ablauf</a></li>
           <li><a href="#bewertungen">Bewertungen</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
@@ -1576,14 +2009,24 @@
 
     <section class="section" id="leistungen">
       <div class="container">
-        <div class="section-title">
-          <h2>Alles rund um Finanzierung, Vermögensaufbau und Absicherung.</h2>
-          <p>Übersichtlich, verständlich und auf Ihre Ziele ausgerichtet – für Eigennutzer, Kapitalanleger, Familien und Modernisierer.</p>
+        <div class="section-title services-title">
+          <p class="services-eyebrow">Unsere Leistungen</p>
+          <h2>Finanzlösungen für Ihre Zukunft</h2>
+          <div class="services-title-line" aria-hidden="true"></div>
         </div>
+        <!--
+          BILDERLISTE FÜR "UNSERE LEISTUNGEN"
+          Du kannst die drei Bilder im Ordner "images" ersetzen, hinzufügen oder löschen.
+          Aktuelle Dateinamen:
+          1. images/leistungen-baufinanzierung.png
+          2. images/leistungen-geldanlage.png
+          3. images/leistungen-altersvorsorge-absicherung.png
+          Wichtig: Wenn du ein Bild ersetzt, behalte denselben Dateinamen oder ändere den src-Wert im jeweiligen <img>-Tag.
+        -->
         <div class="services-grid service-showcase-grid">
           <article class="service-showcase-card">
             <div class="service-image">
-              <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=82" alt="Moderne Immobilie für Baufinanzierung" loading="lazy" />
+              <img src="images/leistungen-baufinanzierung.png" alt="Moderne Immobilie für Baufinanzierung" loading="lazy" data-image-file="images/leistungen-baufinanzierung.png" />
               <div class="service-mini-icons" aria-hidden="true">
                 <span>€</span><span>✓</span><span>↗</span>
               </div>
@@ -1607,7 +2050,7 @@
 
           <article class="service-showcase-card">
             <div class="service-image">
-              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=82" alt="Finanzplanung und Geldanlage" loading="lazy" />
+              <img src="images/leistungen-geldanlage.png" alt="Finanzplanung und Geldanlage" loading="lazy" data-image-file="images/leistungen-geldanlage.png" />
               <div class="service-mini-icons" aria-hidden="true">
                 <span>↗</span><span>€</span><span>•</span>
               </div>
@@ -1631,7 +2074,7 @@
 
           <article class="service-showcase-card">
             <div class="service-image">
-              <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=82" alt="Beratung zu Altersvorsorge und Absicherung" loading="lazy" />
+              <img src="images/leistungen-altersvorsorge-absicherung.png" alt="Beratung zu Altersvorsorge und Absicherung" loading="lazy" data-image-file="images/leistungen-altersvorsorge-absicherung.png" />
               <div class="service-mini-icons" aria-hidden="true">
                 <span>🛡</span><span>✓</span><span>€</span>
               </div>
@@ -1659,54 +2102,34 @@
       </div>
     </section>
 
-    <section class="section financing-way" id="partnerbanken">
+    <section class="finance-trust-strip" id="partnerbanken" aria-label="Finanzierungskennzahlen">
       <div class="container">
-        <div class="way-head">
-          <h2>Der Weg zur optimalen Finanzierung Ihrer Immobilie</h2>
-          <p>So schnell und einfach kommen Sie in Ihr eigenes Zuhause – mit Sami Abu-Gheith Finanzberatung:</p>
-        </div>
-        <div class="way-grid">
-          <article class="way-step">
-            <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=520&q=82" alt="Beratungsgespräch zur Baufinanzierung" />
-            <h3>1. Erstes Zinsangebot anfragen</h3>
-            <p>Direkt über die schnelle Anfrage. Das verpflichtet Sie zu nichts und ist kostenlos.</p>
+        <div class="finance-strip-box">
+          <article class="finance-strip-item">
+            <img class="finance-strip-icon" src="images/partnerbanken-mini.png" alt="Partnerbanken Icon" />
+            <div class="finance-strip-content">
+              <strong class="finance-strip-number finance-count-up" data-target="500" data-suffix="+">0+</strong>
+              <span class="finance-strip-title">Partnerbanken</span>
+              <p>Wir vergleichen starke Finanzierungspartner und finden passende Konditionen für Ihr Vorhaben.</p>
+            </div>
           </article>
-          <article class="way-step">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=520&q=82" alt="Finanzierungsangebote gemeinsam optimieren" />
-            <h3>2. Angebote optimieren</h3>
-            <p>Innerhalb kurzer Zeit melde ich mich bei Ihnen. Nach der persönlichen Beratung zu Ihrem Vorhaben und der Prüfung passender Fördermöglichkeiten wird das Angebot gezielt optimiert.</p>
-          </article>
-          <article class="way-step">
-            <img src="https://images.unsplash.com/photo-1560439514-4e9645039924?auto=format&fit=crop&w=520&q=82" alt="Finanzierung erfolgreich abschließen" />
-            <h3>3. Einfach abschließen</h3>
-            <p>Ich begleite die Formalitäten mit dem Darlehensgeber. Sie erhalten den Finanzierungsvertrag zur Unterschrift und behalten jederzeit den Überblick.</p>
-          </article>
-        </div>
-      </div>
-    </section>
 
-    <section class="section" id="ablauf">
-      <div class="container">
-        <div class="section-title">
-          <h2>Ein klarer Prozess gibt Sicherheit.</h2>
-          <p>Sie wissen jederzeit, welcher Schritt als Nächstes kommt und welche Unterlagen benötigt werden.</p>
-        </div>
-        <div class="steps">
-          <article class="card step">
-            <h3>Erstgespräch</h3>
-            <p>Wir besprechen Ziele, Budget, Immobilie, Eigenkapital und Ihre persönlichen Prioritäten.</p>
+          <article class="finance-strip-item">
+            <img class="finance-strip-icon" src="images/rueckmeldung-mini.png" alt="Schnelle Rückmeldung Icon" />
+            <div class="finance-strip-content">
+              <strong class="finance-strip-number">Schnelle</strong>
+              <span class="finance-strip-title">Rückmeldung</span>
+              <p>Sie erhalten zeitnah eine persönliche Einschätzung und klare nächste Schritte.</p>
+            </div>
           </article>
-          <article class="card step">
-            <h3>Analyse</h3>
-            <p>Ihre Ausgangslage wird geprüft und in eine tragfähige Finanzierungsstruktur übersetzt.</p>
-          </article>
-          <article class="card step">
-            <h3>Vergleich</h3>
-            <p>Passende Banken und Konditionen werden gegenübergestellt und verständlich erklärt.</p>
-          </article>
-          <article class="card step">
-            <h3>Umsetzung</h3>
-            <p>Von der Unterlagenprüfung bis zur Zusage begleite ich Sie zuverlässig durch den Prozess.</p>
+
+          <article class="finance-strip-item">
+            <img class="finance-strip-icon" src="images/transparenz-mini.png" alt="Transparenz Icon" />
+            <div class="finance-strip-content">
+              <strong class="finance-strip-number finance-count-up" data-target="100" data-suffix="%">0%</strong>
+              <span class="finance-strip-title">Transparent</span>
+              <p>Alle Konditionen, Kosten und Abläufe werden verständlich und nachvollziehbar erklärt.</p>
+            </div>
           </article>
         </div>
       </div>
@@ -1737,10 +2160,37 @@
       </div>
     </section>
 
+
+    <section class="section" id="ablauf">
+      <div class="container">
+        <div class="section-title">
+          <h2>Ein klarer Prozess gibt Sicherheit.</h2>
+          <p>Sie wissen jederzeit, welcher Schritt als Nächstes kommt und welche Unterlagen benötigt werden.</p>
+        </div>
+        <div class="steps">
+          <article class="card step">
+            <h3>Erstgespräch</h3>
+            <p>Wir besprechen Ziele, Budget, Immobilie, Eigenkapital und Ihre persönlichen Prioritäten.</p>
+          </article>
+          <article class="card step">
+            <h3>Analyse</h3>
+            <p>Ihre Ausgangslage wird geprüft und in eine tragfähige Finanzierungsstruktur übersetzt.</p>
+          </article>
+          <article class="card step">
+            <h3>Vergleich</h3>
+            <p>Passende Banken und Konditionen werden gegenübergestellt und verständlich erklärt.</p>
+          </article>
+          <article class="card step">
+            <h3>Umsetzung</h3>
+            <p>Von der Unterlagenprüfung bis zur Zusage begleite ich Sie zuverlässig durch den Prozess.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="bewertungen">
       <div class="container">
         <div class="section-title">
-          <span class="eyebrow">Referenzen</span>
           <h2>Vertrauen entsteht durch gute Erfahrungen.</h2>
           <p>Kundenstimmen können hier eingebunden werden – zum Beispiel aus Google-Bewertungen oder persönlichen Referenzen.</p>
         </div>
@@ -1767,30 +2217,52 @@
     <section class="section alt" id="faq">
       <div class="container">
         <div class="section-title">
-          <span class="eyebrow">FAQ</span>
           <h2>Häufige Fragen zur Baufinanzierung.</h2>
           <p>Die wichtigsten Antworten für einen sicheren Start in Ihre Finanzierungsplanung.</p>
         </div>
         <div class="faq">
-          <div class="faq-item open">
-            <button class="faq-button" type="button"><span>Wie viel Immobilie kann ich mir leisten?</span><span>+</span></button>
-            <div class="faq-content"><p>Das hängt von Einkommen, Eigenkapital, laufenden Kosten, Zinsniveau, Tilgung und Lebensplanung ab. Im Erstgespräch ermitteln wir einen realistischen Finanzierungsrahmen.</p></div>
+          
+          <div class="faq-item">
+            <button class="faq-button" type="button" aria-expanded="false">
+              <span class="faq-question">Wie viel Eigenkapital ist sinnvoll?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-content">
+              <div class="faq-inner"><p>Mehr Eigenkapital kann die Konditionen verbessern und die monatliche Belastung reduzieren. Häufig ist es sinnvoll, mindestens die Kaufnebenkosten wie Grunderwerbsteuer, Notar, Grundbuch und gegebenenfalls Makler aus Eigenmitteln abzudecken.</p></div>
+            </div>
           </div>
           <div class="faq-item">
-            <button class="faq-button" type="button"><span>Wie viel Eigenkapital ist sinnvoll?</span><span>+</span></button>
-            <div class="faq-content"><p>Je mehr Eigenkapital vorhanden ist, desto besser können Konditionen ausfallen. Häufig sollten zumindest Kaufnebenkosten wie Grunderwerbsteuer, Notar und Makler berücksichtigt werden.</p></div>
+            <button class="faq-button" type="button" aria-expanded="false">
+              <span class="faq-question">Welche Unterlagen werden für die Baufinanzierung benötigt?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-content">
+              <div class="faq-inner">
+                <p>Typisch sind Einkommensnachweise, Kontoauszüge, Eigenkapitalnachweise, Ausweisdokumente sowie Objektunterlagen wie Exposé, Grundbuchauszug, Wohnflächenberechnung und Bau- oder Kaufunterlagen. Die genaue Liste wird passend zu Ihrem Vorhaben zusammengestellt.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          
+          
+          <div class="faq-item">
+            <button class="faq-button" type="button" aria-expanded="false">
+              <span class="faq-question">Wie schnell bekomme ich eine Finanzierungszusage?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-content">
+              <div class="faq-inner"><p>Das hängt davon ab, wie vollständig die Unterlagen sind und welche Bank angefragt wird. Je besser die Unterlagen vorbereitet sind, desto schneller kann eine verbindliche Prüfung erfolgen.</p></div>
+            </div>
           </div>
           <div class="faq-item">
-            <button class="faq-button" type="button"><span>Wann sollte ich mich um eine Anschlussfinanzierung kümmern?</span><span>+</span></button>
-            <div class="faq-content"><p>Oft lohnt sich eine Prüfung bereits mehrere Jahre vor Ablauf der Zinsbindung. So können Sie rechtzeitig Optionen vergleichen und Planungssicherheit gewinnen.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-button" type="button"><span>Welche Unterlagen werden benötigt?</span><span>+</span></button>
-            <div class="faq-content"><p>Typisch sind Einkommensnachweise, Kontoauszüge, Eigenkapitalnachweise, Objektunterlagen und Angaben zu bestehenden Verpflichtungen. Die genaue Liste hängt vom Vorhaben ab.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-button" type="button"><span>Kostet die Erstberatung etwas?</span><span>+</span></button>
-            <div class="faq-content"><p>Diese Information kann individuell hinterlegt werden. Empfehlenswert ist eine klare Aussage, damit Besucher ohne Hemmschwelle einen Termin anfragen.</p></div>
+            <button class="faq-button" type="button" aria-expanded="false">
+              <span class="faq-question">Ist die Erstberatung unverbindlich?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-content">
+              <div class="faq-inner"><p>Ja, die erste Einschätzung dient dazu, Ihre Ziele, Möglichkeiten und nächsten Schritte zu klären. Danach entscheiden Sie in Ruhe, ob und wie Sie weitermachen möchten.</p></div>
+            </div>
           </div>
         </div>
       </div>
@@ -1799,7 +2271,6 @@
     <section class="section" id="kontakt">
       <div class="container">
         <div class="section-title">
-          <span class="eyebrow">Kontakt & Termin</span>
           <h2>Der nächste Schritt ist einfach.</h2>
           <p>Buchen Sie direkt einen Termin oder senden Sie eine Anfrage. Ich melde mich schnellstmöglich zurück.</p>
         </div>
@@ -1906,37 +2377,151 @@
   <script>
     const nav = document.getElementById('mainNav');
     const toggle = document.getElementById('menuToggle');
+
     toggle?.addEventListener('click', () => nav.classList.toggle('open'));
-    document.querySelectorAll('nav a').forEach(link => link.addEventListener('click', () => nav.classList.remove('open')));
-    document.querySelectorAll('.faq-button').forEach(button => {
-      button.addEventListener('click', () => {
-        const item = button.closest('.faq-item');
-        item.classList.toggle('open');
+    document.querySelectorAll('nav a').forEach((link) => {
+      link.addEventListener('click', () => nav.classList.remove('open'));
+    });
+
+    const faqItems = Array.from(document.querySelectorAll('.faq-item'));
+
+    function setFaqState(item, isOpen) {
+      const button = item.querySelector('.faq-button');
+      const content = item.querySelector('.faq-content');
+
+      item.classList.toggle('open', isOpen);
+      button?.setAttribute('aria-expanded', String(isOpen));
+
+      if (!content) return;
+      content.style.maxHeight = isOpen ? content.scrollHeight + 'px' : '0px';
+    }
+
+    faqItems.forEach((item) => {
+      const button = item.querySelector('.faq-button');
+      setFaqState(item, item.classList.contains('open'));
+
+      button?.addEventListener('click', () => {
+        const shouldOpen = !item.classList.contains('open');
+        setFaqState(item, shouldOpen);
       });
     });
+
+    window.addEventListener('resize', () => {
+      faqItems.forEach((item) => {
+        if (item.classList.contains('open')) setFaqState(item, true);
+      });
+    });
+
     document.getElementById('year').textContent = new Date().getFullYear();
 
     document.getElementById('contactForm').addEventListener('submit', (event) => {
       event.preventDefault();
       const data = new FormData(event.currentTarget);
       const subject = encodeURIComponent('Neue Anfrage über die Website');
-      const body = encodeURIComponent(
-        'Vorname: ' + (data.get('vorname') || '') + '
-' +
-        'Nachname: ' + (data.get('nachname') || '') + '
-' +
-        'E-Mail: ' + (data.get('email') || '') + '
-' +
-        'Telefon: ' + (data.get('telefon') || '') + '
-' +
-        'Anliegen: ' + (data.get('anliegen') || '') + '
+      const body = encodeURIComponent([
+        'Vorname: ' + (data.get('vorname') || ''),
+        'Nachname: ' + (data.get('nachname') || ''),
+        'E-Mail: ' + (data.get('email') || ''),
+        'Telefon: ' + (data.get('telefon') || ''),
+        'Anliegen: ' + (data.get('anliegen') || ''),
+        '',
+        'Nachricht:',
+        data.get('nachricht') || ''
+      ].join('\n'));
 
-' +
-        'Nachricht:
-' + (data.get('nachricht') || '')
-      );
       window.location.href = 'mailto:info@sami-finanzberatung.de?subject=' + subject + '&body=' + body;
     });
   </script>
+
+
+  <script>
+    /* Active underline follows the current section while scrolling */
+    (() => {
+      const links = Array.from(document.querySelectorAll('#mainNav a[href^="#"]'));
+      const sections = links
+        .map((link) => {
+          const target = document.querySelector(link.getAttribute('href'));
+          return target ? { link, target } : null;
+        })
+        .filter(Boolean);
+
+      if (!sections.length) return;
+
+      function setActiveNavLink() {
+        const header = document.querySelector('header');
+        const offset = (header ? header.offsetHeight : 0) + 56;
+        let activeItem = sections[0];
+
+        sections.forEach((item) => {
+          if (item.target.getBoundingClientRect().top <= offset) {
+            activeItem = item;
+          }
+        });
+
+        links.forEach((link) => link.classList.remove('active'));
+        activeItem.link.classList.add('active');
+      }
+
+      setActiveNavLink();
+      window.addEventListener('scroll', setActiveNavLink, { passive: true });
+      window.addEventListener('resize', setActiveNavLink);
+    })();
+  </script>
+
+
+  <script>
+    /* Count-up animation for the dark finance strip */
+    (() => {
+      const counters = Array.from(document.querySelectorAll('.finance-count-up'));
+      const strip = document.querySelector('.finance-trust-strip');
+      if (!counters.length || !strip) return;
+
+      let hasAnimated = false;
+
+      function animateCounter(counter) {
+        const target = Number(counter.dataset.target || 0);
+        const suffix = counter.dataset.suffix || '';
+        const duration = 1300;
+        const startTime = performance.now();
+
+        function update(now) {
+          const progress = Math.min((now - startTime) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const value = Math.round(target * eased);
+          counter.textContent = value + suffix;
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          } else {
+            counter.textContent = target + suffix;
+          }
+        }
+
+        requestAnimationFrame(update);
+      }
+
+      function startCounters() {
+        if (hasAnimated) return;
+        hasAnimated = true;
+        counters.forEach(animateCounter);
+      }
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              startCounters();
+              observer.disconnect();
+            }
+          });
+        }, { threshold: 0.35 });
+
+        observer.observe(strip);
+      } else {
+        startCounters();
+      }
+    })();
+  </script>
+
 </body>
 </html>
