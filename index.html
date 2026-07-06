@@ -1225,6 +1225,280 @@
       }
     }
 
+
+
+    /* === Leistungen: 3 cards matched to the reference card width and site font === */
+    #leistungen {
+      background:
+        radial-gradient(circle at 18% 8%, rgba(7, 140, 231, .12), transparent 28%),
+        linear-gradient(180deg, #eef8ff 0%, #f8fcff 54%, #ffffff 100%) !important;
+    }
+
+    .service-showcase-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      gap: 24px !important;
+      align-items: stretch !important;
+      width: 100% !important;
+    }
+
+    .service-showcase-card,
+    .service-showcase-card * {
+      font-family: inherit !important;
+    }
+
+    .service-showcase-card {
+      width: 100% !important;
+      height: 100%;
+      background: #ffffff;
+      border: 1px solid #d3e9ff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 14px 34px rgba(0, 80, 178, 0.12);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .service-showcase-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(7, 140, 231, .35);
+      box-shadow: 0 18px 42px rgba(0, 80, 178, 0.18);
+    }
+
+    .service-image {
+      position: relative;
+      width: 100%;
+      height: 210px;
+      overflow: hidden;
+      background: #eef7ff;
+      border-bottom: 1px solid #d3e9ff;
+    }
+
+    .service-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.02);
+    }
+
+    .service-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0) 42%, rgba(222, 240, 255, .82) 100%),
+        linear-gradient(135deg, rgba(7, 140, 231, .16), rgba(255,255,255,0) 52%);
+      pointer-events: none;
+    }
+
+    .service-image::before {
+      content: "";
+      position: absolute;
+      left: -70px;
+      top: -76px;
+      z-index: 2;
+      width: 330px;
+      height: 162px;
+      border-radius: 0 0 999px 999px;
+      background: rgba(255, 255, 255, .72);
+      transform: rotate(6deg);
+      pointer-events: none;
+    }
+
+    .service-mini-icons {
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      z-index: 4;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      max-width: 150px;
+    }
+
+    .service-mini-icons span {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .94);
+      border: 1px solid rgba(7, 140, 231, .25);
+      box-shadow: 0 10px 24px rgba(7, 27, 73, .13);
+      color: #0572cc;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      font-weight: 900;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .service-title-row {
+      min-height: 96px;
+      padding: 24px 26px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #f8fcff;
+      border-bottom: 1px solid #d3e9ff;
+    }
+
+    .service-small-icon {
+      width: 46px;
+      height: 46px;
+      flex: 0 0 46px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      border: 1px solid #d3e9ff;
+      box-shadow: 0 6px 14px rgba(0, 80, 178, 0.12);
+      padding: 6px;
+    }
+
+    .service-small-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .service-title-row h3 {
+      margin: 0;
+      color: #061E5A;
+      font-size: clamp(20px, 2vw, 24px);
+      line-height: 1.18;
+      font-weight: 850;
+      letter-spacing: -.025em;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      hyphens: auto;
+    }
+
+    .service-body {
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+    }
+
+    .service-label {
+      margin: 0 0 9px;
+      color: #0074d9;
+      font-size: 13px;
+      line-height: 1.2;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .service-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 18px;
+      display: grid;
+      gap: 8px;
+      color: #53616a;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .service-list li {
+      position: relative;
+      padding-left: 22px;
+      margin: 0;
+    }
+
+    .service-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #0074d9;
+      font-weight: 900;
+    }
+
+    .service-benefit-title {
+      margin: 0 0 9px;
+      color: #0074d9;
+      font-size: 13px;
+      line-height: 1.2;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .service-benefit-text {
+      margin: 0;
+      color: #53616a;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .service-more {
+      margin-top: auto;
+      padding-top: 26px;
+      color: #0074d9;
+      font-weight: 900;
+      font-size: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      width: fit-content;
+    }
+
+    .service-more:hover {
+      color: #061E5A;
+    }
+
+    @media (max-width: 1050px) {
+      .service-showcase-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .service-showcase-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .service-image {
+        height: 200px;
+      }
+      .service-title-row,
+      .service-body {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+    }
+
+  
+
+    /* Final adjustment: remove glow/overlay effects from service card images */
+    .service-image img {
+      transform: none !important;
+      filter: none !important;
+    }
+
+    .service-image::before,
+    .service-image::after {
+      display: none !important;
+      content: none !important;
+      background: none !important;
+      box-shadow: none !important;
+    }
+
+    .service-mini-icons span,
+    .service-small-icon {
+      box-shadow: none !important;
+      filter: none !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+
   </style>
 </head>
 <body>
@@ -1306,66 +1580,77 @@
           <h2>Alles rund um Finanzierung, Vermögensaufbau und Absicherung.</h2>
           <p>Übersichtlich, verständlich und auf Ihre Ziele ausgerichtet – für Eigennutzer, Kapitalanleger, Familien und Modernisierer.</p>
         </div>
-        <div class="services-grid">
-          <article class="card">
-            <div class="icon"><img src="images/baufinanzierung.png" alt="Baufinanzierung" loading="lazy" /></div>
-            <h3>Baufinanzierung</h3>
-            <p>Von der ersten Idee bis zur finalen Zusage: Wir strukturieren Ihre Finanzierung solide und zukunftsfähig.</p>
-            <ul>
-              <li>Erstfinanzierung</li>
-              <li>Selbstgenutzte Immobilien</li>
-              <li>Kapitalanlageimmobilien</li>
-            </ul>
+        <div class="services-grid service-showcase-grid">
+          <article class="service-showcase-card">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=82" alt="Moderne Immobilie für Baufinanzierung" loading="lazy" />
+              <div class="service-mini-icons" aria-hidden="true">
+                <span>€</span><span>✓</span><span>↗</span>
+              </div>
+            </div>
+            <div class="service-title-row">
+              <span class="service-small-icon"><img src="images/baufinanzierung.png" alt="Baufinanzierung" loading="lazy" /></span>
+              <h3>Baufinanzierung</h3>
+            </div>
+            <div class="service-body">
+              <p class="service-label">Was wir übernehmen</p>
+              <ul class="service-list">
+                <li>Persönliche Budget- und Finanzierungsanalyse</li>
+                <li>Vergleich von über 500 Partnerbanken</li>
+                <li>Begleitung bis zur Darlehenszusage</li>
+              </ul>
+              <p class="service-benefit-title">Ihr Vorteil</p>
+              <p class="service-benefit-text">Sie erhalten eine tragfähige Finanzierung mit passenden Konditionen, klarer Struktur und voller Transparenz.</p>
+              <a class="service-more" href="leistungen.html">Mehr erfahren →</a>
+            </div>
           </article>
-          <article class="card">
-            <div class="icon"><img src="images/anschlussfinanzierung.png" alt="Anschlussfinanzierung" loading="lazy" /></div>
-            <h3>Anschlussfinanzierung</h3>
-            <p>Frühzeitig vergleichen, Konditionen sichern und die Restschuld strategisch planen.</p>
-            <ul>
-              <li>Forward-Darlehen</li>
-              <li>Umschuldung</li>
-              <li>Zinsbindung optimieren</li>
-            </ul>
+
+          <article class="service-showcase-card">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=82" alt="Finanzplanung und Geldanlage" loading="lazy" />
+              <div class="service-mini-icons" aria-hidden="true">
+                <span>↗</span><span>€</span><span>•</span>
+              </div>
+            </div>
+            <div class="service-title-row">
+              <span class="service-small-icon"><img src="images/geldanlage.png" alt="Geldanlage" loading="lazy" /></span>
+              <h3>Geldanlage</h3>
+            </div>
+            <div class="service-body">
+              <p class="service-label">Was wir übernehmen</p>
+              <ul class="service-list">
+                <li>Analyse von Zielen, Risiko und Anlagehorizont</li>
+                <li>Aufbau einer verständlichen Depot- und Sparplanstrategie</li>
+                <li>Regelmäßige Anpassung bei Veränderungen</li>
+              </ul>
+              <p class="service-benefit-title">Ihr Vorteil</p>
+              <p class="service-benefit-text">Ihr Vermögen wird strukturiert aufgebaut – passend zu Ihrer Lebensplanung und nachvollziehbar erklärt.</p>
+              <a class="service-more" href="leistungen.html">Mehr erfahren →</a>
+            </div>
           </article>
-          <article class="card">
-            <div class="icon"><img src="images/bausparen.png" alt="Bausparen" loading="lazy" /></div>
-            <h3>Bausparen</h3>
-            <p>Planbare Bausteine für spätere Immobilienwünsche, Zinssicherheit und Modernisierungsvorhaben.</p>
-            <ul>
-              <li>Bausparverträge</li>
-              <li>Eigenkapitalaufbau</li>
-              <li>Fördermöglichkeiten prüfen</li>
-            </ul>
-          </article>
-          <article class="card">
-            <div class="icon"><img src="images/modernisierung-sanierung.png" alt="Modernisierung & Sanierung" loading="lazy" /></div>
-            <h3>Modernisierung & Sanierung</h3>
-            <p>Passende Finanzierung für Renovierung, energetische Sanierung und wertsteigernde Maßnahmen.</p>
-            <ul>
-              <li>Modernisierungskredite</li>
-              <li>Energetische Sanierung</li>
-              <li>Förderfähige Maßnahmen</li>
-            </ul>
-          </article>
-          <article class="card">
-            <div class="icon"><img src="images/geldanlage.png" alt="Geldanlage" loading="lazy" /></div>
-            <h3>Geldanlage</h3>
-            <p>Strukturierter Vermögensaufbau nach Risikoprofil, Anlagehorizont und persönlichen Zielen.</p>
-            <ul>
-              <li>Vermögensaufbau</li>
-              <li>Depot- und Sparpläne</li>
-              <li>Anlagestrategie</li>
-            </ul>
-          </article>
-          <article class="card">
-            <div class="icon"><img src="images/altersvorsorge-absicherung.png" alt="Altersvorsorge & Absicherung" loading="lazy" /></div>
-            <h3>Altersvorsorge & Absicherung</h3>
-            <p>Finanzielle Sicherheit für heute und später – mit verständlicher Analyse Ihrer Versorgungslücken.</p>
-            <ul>
-              <li>Altersvorsorge</li>
-              <li>Risikoabsicherung</li>
-              <li>Privatkredite</li>
-            </ul>
+
+          <article class="service-showcase-card">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=82" alt="Beratung zu Altersvorsorge und Absicherung" loading="lazy" />
+              <div class="service-mini-icons" aria-hidden="true">
+                <span>🛡</span><span>✓</span><span>€</span>
+              </div>
+            </div>
+            <div class="service-title-row">
+              <span class="service-small-icon"><img src="images/altersvorsorge-absicherung.png" alt="Altersvorsorge &amp; Absicherung" loading="lazy" /></span>
+              <h3>Altersvorsorge &amp; Absicherung</h3>
+            </div>
+            <div class="service-body">
+              <p class="service-label">Was wir übernehmen</p>
+              <ul class="service-list">
+                <li>Analyse Ihrer Versorgungslücken</li>
+                <li>Individuelle Planung der Altersvorsorge</li>
+                <li>Absicherung von Einkommen, Familie und Risiken</li>
+              </ul>
+              <p class="service-benefit-title">Ihr Vorteil</p>
+              <p class="service-benefit-text">Sie sichern heute ab, was Ihnen später wichtig ist – mit verständlichen Lösungen für Vorsorge und Schutz.</p>
+              <a class="service-more" href="leistungen.html">Mehr erfahren →</a>
+            </div>
           </article>
         </div>
         <div class="services-cta">
