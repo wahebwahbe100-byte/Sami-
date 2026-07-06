@@ -6,6 +6,8 @@
   <title>Sami Abu-Gheith Finanzberatung | Baufinanzierung, Geldanlage & Absicherung</title>
   <meta name="description" content="Moderne Finanzberatung für Baufinanzierung, Anschlussfinanzierung, Bausparen, Modernisierung, Geldanlage, Altersvorsorge und Absicherung. Zugriff auf über 500 Partnerbanken." />
   <meta name="theme-color" content="#071B49" />
+  <link rel="preload" as="image" href="hero-bg.jpg" />
+  <link rel="preload" as="image" href="hero-bg-mobile.png" media="(max-width: 760px)" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,600;1,700;1,800&display=swap" rel="stylesheet" />
@@ -1068,15 +1070,21 @@
 
   
 
-    /* Final hero background fix: the hero visual is now a complete background image */
+    /* Final hero background fix: clearer hero visual + separate mobile image */
+    :root {
+      --hero-desktop-image: url('hero-bg.jpg');
+      --hero-mobile-image: url('hero-bg-mobile.png');
+    }
+
     .hero {
       background-color: #f3faff !important;
       background-image:
-        linear-gradient(90deg, rgba(255,255,255,.97) 0%, rgba(255,255,255,.94) 36%, rgba(255,255,255,.70) 58%, rgba(255,255,255,.10) 100%),
-        url('hero-bg.jpg') !important;
+        /* left side stays readable, right side is clearer */
+        linear-gradient(90deg, rgba(255,255,255,.90) 0%, rgba(255,255,255,.76) 34%, rgba(255,255,255,.20) 56%, rgba(255,255,255,.03) 78%, rgba(255,255,255,0) 100%),
+        var(--hero-desktop-image) !important;
       background-repeat: no-repeat !important;
-      background-size: cover !important;
-      background-position: center center !important;
+      background-size: cover, cover !important;
+      background-position: center center, center center !important;
     }
 
     .hero::before,
@@ -1089,9 +1097,11 @@
     @media (max-width: 760px) {
       .hero {
         background-image:
-          linear-gradient(180deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.90) 100%),
-          url('hero-bg.jpg') !important;
-        background-position: 64% center !important;
+          linear-gradient(180deg, rgba(255,255,255,.72) 0%, rgba(255,255,255,.44) 52%, rgba(255,255,255,.24) 100%),
+          var(--hero-mobile-image),
+          var(--hero-desktop-image) !important;
+        background-size: cover, cover, cover !important;
+        background-position: center center, 64% center, 64% center !important;
       }
     }
 
@@ -1937,6 +1947,1373 @@
     /* Removed emoji overlay icons above service images */
     .service-mini-icons { display: none !important; }
 
+
+
+    /* Full-width image section instead of map/calendar */
+    .booking-map {
+      display: block;
+      margin-top: 24px;
+    }
+
+    .image-cta-card {
+      position: relative;
+      min-height: 540px;
+      overflow: hidden;
+      border-radius: 32px;
+      background: #eef4ff;
+      border: 1px solid rgba(7, 27, 73, .10);
+      box-shadow: 0 18px 42px rgba(7, 27, 73, .10);
+      isolation: isolate;
+    }
+
+    .image-cta-card > img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: -2;
+    }
+
+    .image-cta-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(90deg, rgba(255,255,255,.00) 0%, rgba(255,255,255,.00) 58%, rgba(255,255,255,.08) 100%);
+      pointer-events: none;
+    }
+
+    .image-cta-panel {
+      position: absolute;
+      top: 50%;
+      right: 24px;
+      transform: translateY(-50%);
+      width: min(430px, calc(100% - 48px));
+      padding: 28px 28px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      color: #24344f;
+      background: rgba(255, 255, 255, .96);
+      border-radius: 28px;
+      box-shadow: 0 20px 40px rgba(7, 27, 73, .12);
+      border: 1px solid rgba(7, 27, 73, .08);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .image-cta-kicker {
+      margin-bottom: 10px;
+      color: #0B3F8C;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .image-cta-panel h3 {
+      margin: 0 0 12px;
+      color: #071B49;
+      font-size: clamp(26px, 2.6vw, 38px);
+      line-height: 1.08;
+      font-weight: 850;
+      letter-spacing: -.03em;
+    }
+
+    .image-cta-panel p {
+      margin: 0 0 24px;
+      color: #37465f;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .image-cta-actions {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .image-cta-panel .btn {
+      min-height: 52px;
+      padding: 0 22px;
+      background: #ede8e3 !important;
+      color: #071B49 !important;
+      box-shadow: none !important;
+      border: 0 !important;
+    }
+
+    .image-cta-panel .btn:hover {
+      background: #e1d8cf !important;
+      color: #06163d !important;
+    }
+
+    .image-cta-panel .btn.primary {
+      background: #071B49 !important;
+      color: #ffffff !important;
+    }
+
+    .image-cta-panel .btn.primary:hover {
+      background: #0b2a66 !important;
+      color: #ffffff !important;
+    }
+
+    @media (max-width: 900px) {
+      .image-cta-card {
+        min-height: 520px;
+      }
+
+      .image-cta-panel {
+        top: auto;
+        right: 18px;
+        bottom: 18px;
+        transform: none;
+        width: min(420px, calc(100% - 36px));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .image-cta-card {
+        min-height: 430px;
+      }
+
+      .image-cta-panel {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        width: auto;
+        padding: 22px;
+        border-radius: 22px;
+      }
+
+      .image-cta-panel h3 {
+        font-size: 24px;
+      }
+
+      .image-cta-panel p {
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .image-cta-actions {
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .image-cta-actions .btn {
+        width: 100%;
+      }
+    }
+
+
+
+    /* === Complete mobile optimization layer === */
+    html,
+    body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    a,
+    button,
+    input,
+    select,
+    textarea {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn,
+    button,
+    a {
+      touch-action: manipulation;
+    }
+
+    @media (hover: none) {
+      .btn:hover,
+      .card:hover,
+      .service-showcase-card:hover {
+        transform: none !important;
+      }
+    }
+
+    @media (max-width: 1180px) {
+      .container {
+        width: min(var(--max), calc(100% - 32px)) !important;
+      }
+
+      .section {
+        padding: 76px 0 !important;
+      }
+
+      .services-grid,
+      .reviews,
+      .steps,
+      .benefits-grid,
+      .way-grid,
+      .contact-grid,
+      .split,
+      .booking-map,
+      .footer-grid {
+        gap: 22px !important;
+      }
+    }
+
+    @media (max-width: 980px) {
+      body.menu-open {
+        overflow: hidden;
+      }
+
+      .topbar {
+        display: none !important;
+      }
+
+      header {
+        z-index: 2000 !important;
+      }
+
+      .nav,
+      .container.nav {
+        min-height: 72px !important;
+        padding: 8px 0 !important;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) auto !important;
+        align-items: center !important;
+        gap: 10px !important;
+      }
+
+      .brand {
+        min-width: 0 !important;
+        gap: 8px !important;
+        overflow: hidden !important;
+      }
+
+      .brand-logo-frame {
+        width: 60px !important;
+        height: 52px !important;
+        flex: 0 0 60px !important;
+      }
+
+      .brand-logo-frame .brand-logo,
+      .brand .brand-logo {
+        width: 58px !important;
+        height: 58px !important;
+      }
+
+      .brand-text {
+        min-width: 0 !important;
+      }
+
+      .brand-text strong {
+        max-width: 100% !important;
+        font-size: 18px !important;
+        line-height: 1.05 !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+      }
+
+      .brand-text span {
+        max-width: 100% !important;
+        font-size: 10px !important;
+        letter-spacing: .08em !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+      }
+
+      .nav-cta {
+        display: none !important;
+      }
+
+      .menu-toggle {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 46px !important;
+        height: 46px !important;
+        flex: 0 0 46px !important;
+        border-radius: 14px !important;
+        background: #071B49 !important;
+        color: #ffffff !important;
+        box-shadow: 0 12px 26px rgba(7, 27, 73, .18) !important;
+      }
+
+      #mainNav {
+        position: fixed !important;
+        top: 78px !important;
+        left: 16px !important;
+        right: 16px !important;
+        z-index: 2100 !important;
+        display: block !important;
+        max-height: calc(100dvh - 96px) !important;
+        overflow: auto !important;
+        overscroll-behavior: contain !important;
+        background: rgba(255, 255, 255, .98) !important;
+        border: 1px solid rgba(7, 27, 73, .10) !important;
+        border-radius: 20px !important;
+        box-shadow: 0 22px 60px rgba(7, 27, 73, .22) !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        transform: translateY(-10px) scale(.98) !important;
+        transform-origin: top center !important;
+        transition: opacity .22s ease, transform .22s ease, visibility .22s ease !important;
+      }
+
+      #mainNav.open {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: translateY(0) scale(1) !important;
+      }
+
+      #mainNav ul {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 6px !important;
+        padding: 12px !important;
+        margin: 0 !important;
+      }
+
+      #mainNav a {
+        width: 100% !important;
+        min-height: 48px !important;
+        padding: 13px 14px !important;
+        justify-content: flex-start !important;
+        border-radius: 14px !important;
+        color: #082558 !important;
+        font-size: 15px !important;
+        font-weight: 850 !important;
+      }
+
+      #mainNav a.active,
+      #mainNav a:hover {
+        background: rgba(8, 37, 88, .08) !important;
+      }
+
+      #mainNav a::after {
+        display: none !important;
+      }
+
+      .section {
+        padding: 64px 0 !important;
+      }
+
+      .section-title,
+      .services-title,
+      .bank-logo-head,
+      .way-head,
+      .benefits-head {
+        max-width: 100% !important;
+        margin-bottom: 32px !important;
+        text-align: center !important;
+      }
+
+      .section-title h2,
+      .services-title h2,
+      .bank-logo-head h2,
+      .way-head h2,
+      .benefits-head h2 {
+        font-size: clamp(30px, 8.7vw, 42px) !important;
+        line-height: 1.08 !important;
+      }
+
+      .section-title p,
+      .bank-logo-head p,
+      .way-head p {
+        font-size: 16px !important;
+        line-height: 1.65 !important;
+      }
+
+      .hero {
+        min-height: auto !important;
+        background-image:
+          linear-gradient(180deg, rgba(255,255,255,.86) 0%, rgba(255,255,255,.70) 46%, rgba(255,255,255,.94) 100%),
+          var(--hero-mobile-image),
+          var(--hero-desktop-image) !important;
+        background-size: cover, cover, cover !important;
+        background-position: center top, center top, center top !important;
+      }
+
+      .hero-ref-wrap,
+      .hero-ref-wrap.container {
+        width: min(100% - 32px, var(--max)) !important;
+        min-height: auto !important;
+        padding: 44px 0 46px !important;
+        align-items: flex-start !important;
+      }
+
+      .hero-copy {
+        width: 100% !important;
+        max-width: 560px !important;
+        padding: 0 !important;
+      }
+
+      .hero h1 {
+        max-width: 100% !important;
+        font-size: clamp(32px, 10vw, 46px) !important;
+        line-height: 1.08 !important;
+        letter-spacing: -.035em !important;
+      }
+
+      .hero-check-list {
+        margin-top: 22px !important;
+        gap: 12px !important;
+      }
+
+      .hero-check-list li {
+        gap: 12px !important;
+        font-size: 16px !important;
+        line-height: 1.42 !important;
+      }
+
+      .hero-check {
+        flex: 0 0 22px !important;
+        font-size: 24px !important;
+        transform: translateY(-1px) !important;
+      }
+
+      .hero-actions {
+        width: 100% !important;
+        margin-top: 26px !important;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+      }
+
+      .hero-actions .btn,
+      .btn.hero-primary,
+      .btn.hero-secondary,
+      .btn.hero-primary:hover,
+      .btn.hero-secondary:hover {
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 56px !important;
+        padding: 0 18px !important;
+        border-radius: 16px !important;
+        justify-content: center !important;
+      }
+
+      .btn.hero-secondary,
+      .btn.hero-secondary:hover {
+        background: rgba(255,255,255,.86) !important;
+        border: 1px solid rgba(7, 27, 73, .16) !important;
+        color: #071B49 !important;
+      }
+
+      .bank-logo-strip {
+        padding: 28px 0 30px !important;
+      }
+
+      .bank-logo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+      }
+
+      .bank-logo-item {
+        min-height: 68px !important;
+        padding: 12px !important;
+        border: 1px solid rgba(7, 27, 73, .08) !important;
+        border-radius: 16px !important;
+        background: rgba(255,255,255,.78) !important;
+      }
+
+      .bank-logo-item img {
+        max-height: 34px !important;
+      }
+
+      .service-showcase-grid,
+      .services-grid,
+      .benefits-grid,
+      .way-grid,
+      .steps,
+      .reviews,
+      .footer-grid,
+      .contact-grid,
+      .split,
+      .booking-map {
+        grid-template-columns: 1fr !important;
+      }
+
+      .service-showcase-card,
+      .card,
+      .feature-box,
+      .form-card,
+      .contact-card,
+      .faq-item,
+      .embed-box {
+        border-radius: 22px !important;
+      }
+
+      .service-image {
+        height: 190px !important;
+      }
+
+      .service-title-row,
+      .service-body,
+      .card,
+      .feature-box,
+      .form-card,
+      .contact-card {
+        padding: 22px !important;
+      }
+
+      .service-title-row {
+        min-height: auto !important;
+      }
+
+      .service-title-row h3,
+      .card h3,
+      .way-step h3,
+      .benefit-item h3 {
+        font-size: clamp(22px, 7vw, 28px) !important;
+        line-height: 1.15 !important;
+      }
+
+      .service-list,
+      .service-benefit-text,
+      .card p,
+      .card li,
+      .way-step p,
+      .benefit-item p,
+      .quote {
+        font-size: 15.5px !important;
+        line-height: 1.7 !important;
+      }
+
+      .services-cta .btn {
+        width: 100% !important;
+      }
+
+      .finance-strip-box {
+        border-radius: 0 !important;
+      }
+
+      .finance-strip-item {
+        grid-template-columns: 48px minmax(0, 1fr) !important;
+        gap: 14px !important;
+        padding: 22px 16px !important;
+      }
+
+      .finance-strip-icon {
+        width: 42px !important;
+        height: 42px !important;
+      }
+
+      .finance-strip-number {
+        font-size: 30px !important;
+      }
+
+      .finance-strip-content p {
+        max-width: none !important;
+      }
+
+      .benefit-item img,
+      .way-step img {
+        width: min(220px, 72vw) !important;
+        height: min(220px, 72vw) !important;
+        margin-bottom: 18px !important;
+      }
+
+      .step {
+        padding-top: 22px !important;
+        padding-left: 70px !important;
+      }
+
+      .step::before {
+        top: 22px !important;
+        left: 22px !important;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr !important;
+      }
+
+      input,
+      select,
+      textarea {
+        min-height: 52px !important;
+        font-size: 16px !important;
+      }
+
+      .faq-button {
+        padding: 18px !important;
+        align-items: flex-start !important;
+        font-size: 16px !important;
+        line-height: 1.45 !important;
+      }
+
+      .faq-inner {
+        padding: 0 18px 20px !important;
+      }
+
+      .image-cta-card {
+        min-height: auto !important;
+        display: grid !important;
+        border-radius: 24px !important;
+      }
+
+      .image-cta-card > img {
+        position: relative !important;
+        z-index: 0 !important;
+        height: 260px !important;
+        object-position: center top !important;
+      }
+
+      .image-cta-card::after {
+        display: none !important;
+      }
+
+      .image-cta-panel {
+        position: relative !important;
+        inset: auto !important;
+        transform: none !important;
+        width: auto !important;
+        margin: -30px 14px 14px !important;
+        padding: 22px !important;
+        border-radius: 22px !important;
+      }
+
+      .image-cta-panel h3 {
+        font-size: clamp(25px, 8vw, 32px) !important;
+      }
+
+      .image-cta-panel p {
+        font-size: 15.5px !important;
+        line-height: 1.65 !important;
+      }
+
+      .image-cta-actions {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+      }
+
+      .image-cta-actions .btn {
+        width: 100% !important;
+      }
+
+      footer {
+        padding-bottom: 84px !important;
+      }
+
+      .footer-grid {
+        padding-bottom: 24px !important;
+      }
+
+      .legal {
+        display: grid !important;
+        gap: 10px !important;
+        text-align: center !important;
+      }
+
+      .floating-cta {
+        left: 16px !important;
+        right: 16px !important;
+        bottom: 14px !important;
+        justify-content: center !important;
+        min-height: 54px !important;
+        border-radius: 18px !important;
+        padding: 0 16px !important;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container,
+      .hero-ref-wrap.container {
+        width: calc(100% - 28px) !important;
+      }
+
+      .section {
+        padding: 52px 0 !important;
+      }
+
+      .nav,
+      .container.nav {
+        min-height: 66px !important;
+      }
+
+      #mainNav {
+        top: 72px !important;
+        left: 12px !important;
+        right: 12px !important;
+        border-radius: 18px !important;
+      }
+
+      .brand-logo-frame {
+        width: 54px !important;
+        height: 46px !important;
+        flex-basis: 54px !important;
+      }
+
+      .brand-logo-frame .brand-logo,
+      .brand .brand-logo {
+        width: 52px !important;
+        height: 52px !important;
+      }
+
+      .brand-text strong {
+        font-size: 16px !important;
+      }
+
+      .brand-text span {
+        font-size: 9px !important;
+      }
+
+      .menu-toggle {
+        width: 43px !important;
+        height: 43px !important;
+        flex-basis: 43px !important;
+        border-radius: 13px !important;
+      }
+
+      .hero-ref-wrap,
+      .hero-ref-wrap.container {
+        padding-top: 34px !important;
+        padding-bottom: 40px !important;
+      }
+
+      .hero h1 {
+        font-size: clamp(30px, 9.5vw, 39px) !important;
+      }
+
+      .hero-check-list li {
+        font-size: 15.5px !important;
+      }
+
+      .hero-actions .btn {
+        min-height: 54px !important;
+        font-size: 15px !important;
+      }
+
+      .bank-logo-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      .service-image {
+        height: 176px !important;
+      }
+
+      .service-title-row,
+      .service-body,
+      .card,
+      .feature-box,
+      .form-card,
+      .contact-card {
+        padding: 20px !important;
+      }
+
+      .image-cta-card > img {
+        height: 230px !important;
+      }
+
+      .floating-cta {
+        left: 12px !important;
+        right: 12px !important;
+      }
+    }
+
+
+    /* Contact section now links to a dedicated full page */
+    #kontakt .contact-grid {
+      margin-top: 0;
+    }
+
+  
+
+    /* === Hero text style matched to the provided reference page === */
+    .hero {
+      min-height: 690px !important;
+      display: flex !important;
+      align-items: center !important;
+      overflow: hidden !important;
+      background:
+        radial-gradient(circle at 77% 24%, rgba(255, 255, 255, 0.18), transparent 32%),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.94) 34%, rgba(239, 248, 255, 0.68) 54%, rgba(255, 255, 255, 0.18) 78%, rgba(255, 255, 255, 0.02) 100%),
+        var(--hero-desktop-image) center right / cover no-repeat !important;
+      isolation: isolate !important;
+    }
+
+    .hero::before {
+      content: "" !important;
+      display: block !important;
+      position: absolute !important;
+      inset: 0 !important;
+      z-index: 0 !important;
+      background: linear-gradient(180deg, rgba(238, 247, 255, 0.52) 0%, rgba(255, 255, 255, 0.20) 52%, rgba(255, 255, 255, 0.72) 100%) !important;
+      pointer-events: none !important;
+    }
+
+    .hero::after {
+      content: "" !important;
+      display: block !important;
+      position: absolute !important;
+      right: -8% !important;
+      bottom: -1px !important;
+      left: -8% !important;
+      z-index: 0 !important;
+      height: 150px !important;
+      background:
+        radial-gradient(80% 140% at 50% 100%, rgba(7, 140, 231, 0.26), transparent 62%),
+        linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.94) 74%) !important;
+      clip-path: ellipse(72% 54% at 50% 100%) !important;
+      pointer-events: none !important;
+    }
+
+    .hero > .container {
+      position: relative !important;
+      z-index: 1 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      min-height: 690px !important;
+    }
+
+    .hero-content {
+      position: relative !important;
+      z-index: 1 !important;
+      width: min(640px, 100%) !important;
+      padding: 92px 0 112px !important;
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+
+    .hero h1 {
+      max-width: 610px !important;
+      margin: 0 0 22px !important;
+      color: #031a5b !important;
+      font-family: Inter, Arial, sans-serif !important;
+      font-size: clamp(38px, 5.2vw, 64px) !important;
+      font-style: normal !important;
+      font-weight: 900 !important;
+      line-height: 1.02 !important;
+      letter-spacing: -0.06em !important;
+      text-wrap: balance !important;
+    }
+
+    .hero h1 span {
+      display: block !important;
+      color: #0072d5 !important;
+    }
+
+    .hero-content p {
+      position: relative !important;
+      max-width: 520px !important;
+      margin: 0 0 32px !important;
+      padding-top: 24px !important;
+      color: #263846 !important;
+      font-family: Inter, Arial, sans-serif !important;
+      font-size: 19px !important;
+      font-weight: 600 !important;
+      line-height: 1.75 !important;
+      text-shadow: none !important;
+    }
+
+    .hero-content p::before {
+      content: "" !important;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 82px !important;
+      height: 5px !important;
+      border-radius: 999px !important;
+      background: #0072d5 !important;
+      box-shadow: 0 8px 18px rgba(0, 114, 213, 0.22) !important;
+    }
+
+    .hero-actions {
+      display: flex !important;
+      gap: 16px !important;
+      flex-wrap: wrap !important;
+      margin-top: 0 !important;
+      width: auto !important;
+    }
+
+    .hero-actions .btn {
+      min-height: 48px !important;
+      border-radius: 18px !important;
+      padding: 14px 22px !important;
+      font-family: Inter, Arial, sans-serif !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      letter-spacing: 0 !important;
+      line-height: 1 !important;
+      box-shadow: 0 16px 34px rgba(0, 80, 178, 0.18) !important;
+      transition: transform .22s ease, background .22s ease, color .22s ease, border-color .22s ease !important;
+    }
+
+    .hero-actions .btn:hover {
+      transform: translateY(-2px) !important;
+    }
+
+    .btn.hero-primary,
+    .btn.hero-primary:hover {
+      min-width: 0 !important;
+      background: linear-gradient(135deg, #003488, #0072d5 55%, #0089ec) !important;
+      color: #ffffff !important;
+      border: 0 !important;
+    }
+
+    .btn.hero-secondary {
+      min-width: 0 !important;
+      background: rgba(255, 255, 255, .88) !important;
+      color: #0072d5 !important;
+      border: 1px solid #0072d5 !important;
+    }
+
+    .btn.hero-secondary:hover {
+      background: #0072d5 !important;
+      color: #ffffff !important;
+      border-color: #0072d5 !important;
+    }
+
+    .hero-actions .btn-icon {
+      width: 14px !important;
+      height: 14px !important;
+      flex: 0 0 14px !important;
+      margin-right: 7px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      color: currentColor !important;
+    }
+
+    .hero-actions .btn-icon svg {
+      width: 14px !important;
+      height: 14px !important;
+      display: block !important;
+      stroke: currentColor !important;
+      fill: none !important;
+      stroke-linecap: round !important;
+      stroke-linejoin: round !important;
+    }
+
+    .hero-actions .btn::after {
+      content: "→" !important;
+      margin-left: 8px !important;
+      font-size: 18px !important;
+      line-height: 1 !important;
+      transition: transform 0.22s ease !important;
+    }
+
+    .hero-actions .btn:hover::after {
+      transform: translateX(4px) !important;
+    }
+
+    @media (max-width: 620px) {
+      .hero {
+        min-height: calc(100svh - 84px) !important;
+        align-items: stretch !important;
+        background:
+          linear-gradient(90deg, rgba(255, 255, 255, 0.93) 0%, rgba(255, 255, 255, 0.72) 38%, rgba(255, 255, 255, 0.20) 68%, rgba(255, 255, 255, 0.02) 100%),
+          linear-gradient(180deg, rgba(238, 247, 255, 0.08) 0%, rgba(255, 255, 255, 0.14) 68%, rgba(255, 255, 255, 0.46) 100%),
+          var(--hero-mobile-image) 78% center / auto 100% no-repeat !important;
+      }
+
+      .hero::before {
+        background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.26) 100%) !important;
+      }
+
+      .hero::after {
+        right: -24% !important;
+        left: -24% !important;
+        height: 104px !important;
+        background:
+          linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.58) 68%),
+          radial-gradient(70% 110% at 50% 100%, rgba(0, 114, 213, 0.24), transparent 72%) !important;
+        clip-path: ellipse(72% 42% at 50% 100%) !important;
+      }
+
+      .hero > .container {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        min-height: calc(100svh - 84px) !important;
+        width: min(100% - 26px, 1180px) !important;
+      }
+
+      .hero-content {
+        width: 100% !important;
+        max-width: 300px !important;
+        margin: 0 !important;
+        padding: 54px 0 90px !important;
+        text-align: left !important;
+      }
+
+      .hero h1 {
+        max-width: 255px !important;
+        margin: 0 0 20px !important;
+        font-size: clamp(27px, 8.2vw, 38px) !important;
+        line-height: 1.02 !important;
+        letter-spacing: -0.065em !important;
+        text-shadow: 0 4px 18px rgba(255, 255, 255, 0.98) !important;
+      }
+
+      .hero h1 span {
+        margin-top: 2px !important;
+      }
+
+      .hero-content p {
+        max-width: 230px !important;
+        margin: 0 0 30px !important;
+        padding-top: 22px !important;
+        color: #263846 !important;
+        font-size: clamp(11px, 3.25vw, 14px) !important;
+        line-height: 1.55 !important;
+        font-weight: 650 !important;
+        text-shadow: 0 2px 14px rgba(255, 255, 255, 0.96) !important;
+      }
+
+      .hero-content p::before {
+        width: 72px !important;
+        height: 4px !important;
+      }
+
+      .hero-actions {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        justify-content: stretch !important;
+        gap: 14px !important;
+        max-width: 235px !important;
+        width: 100% !important;
+      }
+
+      .hero-actions .btn,
+      .btn.hero-primary,
+      .btn.hero-secondary,
+      .btn.hero-primary:hover,
+      .btn.hero-secondary:hover {
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 42px !important;
+        justify-content: space-between !important;
+        border-radius: 12px !important;
+        padding: 10px 14px !important;
+        font-size: 11px !important;
+      }
+
+      .btn.hero-secondary {
+        background: rgba(255, 255, 255, 0.88) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+      }
+
+      .hero-actions .btn-icon,
+      .hero-actions .btn-icon svg {
+        width: 14px !important;
+        height: 14px !important;
+      }
+
+      .hero-actions .btn-icon {
+        flex-basis: 14px !important;
+        margin-right: 7px !important;
+      }
+    }
+
+    /* Final hero checkmarks restore: 3 Vorteile mit Häkchen, Buttons bleiben ohne Icons */
+    .hero-content .hero-check-list {
+      position: relative !important;
+      max-width: 540px !important;
+      margin: 0 0 32px !important;
+      padding: 24px 0 0 !important;
+      list-style: none !important;
+      display: grid !important;
+      gap: 12px !important;
+      color: #263846 !important;
+    }
+
+    .hero-content .hero-check-list::before {
+      content: "" !important;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 82px !important;
+      height: 5px !important;
+      border-radius: 999px !important;
+      background: #0072d5 !important;
+      box-shadow: 0 8px 18px rgba(0, 114, 213, 0.22) !important;
+    }
+
+    .hero-content .hero-check-list li {
+      display: flex !important;
+      align-items: flex-start !important;
+      gap: 12px !important;
+      margin: 0 !important;
+      color: #263846 !important;
+      font-family: Inter, Arial, sans-serif !important;
+      font-size: clamp(15px, 1.45vw, 18px) !important;
+      line-height: 1.45 !important;
+      font-weight: 750 !important;
+      letter-spacing: -0.02em !important;
+      text-shadow: 0 2px 14px rgba(255, 255, 255, 0.92) !important;
+    }
+
+    .hero-content .hero-check-list strong {
+      font: inherit !important;
+    }
+
+    .hero-content .hero-check {
+      flex: 0 0 20px !important;
+      color: #008B4C !important;
+      font-family: Arial, sans-serif !important;
+      font-size: 22px !important;
+      line-height: 1.1 !important;
+      font-weight: 900 !important;
+      transform: translateY(0) !important;
+    }
+
+    @media (max-width: 620px) {
+      .hero-content .hero-check-list {
+        max-width: 235px !important;
+        margin: 0 0 30px !important;
+        padding-top: 22px !important;
+        gap: 8px !important;
+      }
+
+      .hero-content .hero-check-list::before {
+        width: 72px !important;
+        height: 4px !important;
+      }
+
+      .hero-content .hero-check-list li {
+        gap: 8px !important;
+        font-size: clamp(11px, 3.25vw, 14px) !important;
+        line-height: 1.45 !important;
+        font-weight: 750 !important;
+        letter-spacing: -0.025em !important;
+      }
+
+      .hero-content .hero-check {
+        flex-basis: 16px !important;
+        font-size: 16px !important;
+        line-height: 1.25 !important;
+      }
+    }
+
+
+
+    /* Final tweak: stronger visibility of the right-side hero image while keeping left text readable */
+    .hero {
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.84) 30%, rgba(255, 255, 255, 0.42) 52%, rgba(255, 255, 255, 0.12) 74%, rgba(255, 255, 255, 0.00) 100%),
+        linear-gradient(180deg, rgba(238, 247, 255, 0.04) 0%, rgba(255, 255, 255, 0.08) 58%, rgba(255, 255, 255, 0.18) 100%),
+        var(--hero-desktop-image) 72% center / cover no-repeat !important;
+    }
+
+    .hero::before {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.12) 100%) !important;
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        background:
+          linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.78) 34%, rgba(255, 255, 255, 0.34) 58%, rgba(255, 255, 255, 0.08) 82%, rgba(255, 255, 255, 0.00) 100%),
+          linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.14) 100%),
+          var(--hero-mobile-image) 82% center / auto 100% no-repeat !important;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .hero {
+        background:
+          linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.78) 34%, rgba(255, 255, 255, 0.34) 58%, rgba(255, 255, 255, 0.08) 82%, rgba(255, 255, 255, 0.00) 100%),
+          linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.14) 100%),
+          var(--hero-mobile-image) 82% center / auto 100% no-repeat !important;
+      }
+
+      .hero::before {
+        background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.16) 100%) !important;
+      }
+    }
+
+
+    /* Final stronger tweak: make the right-side hero image clearer and more visible */
+    .hero {
+      background:
+        linear-gradient(90deg,
+          rgba(255, 255, 255, 0.94) 0%,
+          rgba(255, 255, 255, 0.76) 26%,
+          rgba(255, 255, 255, 0.28) 47%,
+          rgba(255, 255, 255, 0.06) 66%,
+          rgba(255, 255, 255, 0.00) 100%
+        ),
+        linear-gradient(180deg,
+          rgba(238, 247, 255, 0.02) 0%,
+          rgba(255, 255, 255, 0.04) 58%,
+          rgba(255, 255, 255, 0.10) 100%
+        ),
+        var(--hero-desktop-image) 74% center / cover no-repeat !important;
+    }
+
+    .hero::before {
+      background: linear-gradient(180deg, rgba(255,255,255,0.00) 0%, rgba(255,255,255,0.08) 100%) !important;
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        background:
+          linear-gradient(90deg,
+            rgba(255, 255, 255, 0.94) 0%,
+            rgba(255, 255, 255, 0.68) 30%,
+            rgba(255, 255, 255, 0.22) 52%,
+            rgba(255, 255, 255, 0.04) 74%,
+            rgba(255, 255, 255, 0.00) 100%
+          ),
+          linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.08) 100%),
+          var(--hero-mobile-image) 84% center / auto 103% no-repeat !important;
+      }
+
+      .hero::before {
+        background: linear-gradient(180deg, rgba(255,255,255,0.00) 0%, rgba(255,255,255,0.10) 100%) !important;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .hero {
+        background:
+          linear-gradient(90deg,
+            rgba(255, 255, 255, 0.94) 0%,
+            rgba(255, 255, 255, 0.66) 30%,
+            rgba(255, 255, 255, 0.20) 52%,
+            rgba(255, 255, 255, 0.03) 74%,
+            rgba(255, 255, 255, 0.00) 100%
+          ),
+          linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.08) 100%),
+          var(--hero-mobile-image) 84% center / auto 103% no-repeat !important;
+      }
+    }
+
+
+    /* Mobile fix: prevent process step numbers from overlapping the titles */
+    @media (max-width: 760px) {
+      .steps .step.card {
+        padding: 28px 22px 26px !important;
+      }
+
+      .steps .step.card::before {
+        position: static !important;
+        width: 56px !important;
+        height: 56px !important;
+        margin: 0 0 16px !important;
+        border-radius: 18px !important;
+        font-family: Inter, Arial, sans-serif !important;
+        font-size: 18px !important;
+        line-height: 1 !important;
+        letter-spacing: 0 !important;
+      }
+
+      .steps .step.card h3 {
+        margin: 0 0 10px !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+        overflow: visible !important;
+        white-space: normal !important;
+        line-height: 1.12 !important;
+      }
+
+      .steps .step.card p {
+        margin: 0 !important;
+        max-width: 100% !important;
+        overflow-wrap: anywhere !important;
+      }
+    }
+
+
+    /* === Smooth page + text reveal animation, matched to the reference site === */
+    @keyframes sitePageFadeIn {
+      from {
+        opacity: 0.94;
+        transform: translateY(4px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    body {
+      animation: sitePageFadeIn 0.28s ease-out both;
+    }
+
+    section,
+    .section,
+    .contact-grid,
+    .booking-map {
+      scroll-margin-top: 104px;
+    }
+
+    .smooth-reveal {
+      opacity: 1;
+      transform: translateY(0);
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+      transition-delay: var(--reveal-delay, 0s);
+      will-change: opacity, transform;
+    }
+
+    .smooth-reveal:not(.is-visible) {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+
+    .smooth-reveal.is-visible {
+      opacity: 1;
+    }
+
+    .hero-copy.smooth-reveal:not(.is-visible) {
+      transform: translateY(18px);
+    }
+
+    .service-showcase-card.smooth-reveal:not(.is-visible),
+    .card.smooth-reveal:not(.is-visible),
+    .step.smooth-reveal:not(.is-visible),
+    .way-step.smooth-reveal:not(.is-visible),
+    .benefit-item.smooth-reveal:not(.is-visible),
+    .finance-strip-item.smooth-reveal:not(.is-visible),
+    .review-card.smooth-reveal:not(.is-visible),
+    .faq-item.smooth-reveal:not(.is-visible) {
+      transform: translateY(34px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .smooth-reveal,
+      .smooth-reveal:not(.is-visible) {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+
+
+
+    /* Final fix: remove the incorrect blue circle/ellipse from the hero area */
+    .hero::after {
+      display: none !important;
+      content: none !important;
+      background: none !important;
+      clip-path: none !important;
+      box-shadow: none !important;
+    }
+
   </style>
 </head>
 <body>
@@ -1954,26 +3331,24 @@
       </a>
       <nav id="mainNav" aria-label="Hauptnavigation">
         <ul>
+          <li><a href="#start">STARTSEITE</a></li>
           <li><a href="#leistungen">Leistungen</a></li>
-          <li><a href="#partnerbanken">Partnerbanken</a></li>
           <li><a href="#ueber-mich">Vorteile</a></li>
           <li><a href="#ablauf">Ablauf</a></li>
-          <li><a href="#bewertungen">Bewertungen</a></li>
-          <li><a href="#faq">FAQ</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
       </nav>
-      <a class="btn primary nav-cta" href="#termin">Termin buchen</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">☰</button>
+      <a class="btn primary nav-cta" href="kontakt.html">Termin buchen</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-controls="mainNav" aria-expanded="false">☰</button>
     </div>
   </header>
 
   <main id="start">
     <section class="hero" id="start" aria-label="Startbereich Baufinanzierung">
-      <div class="container hero-ref-wrap">
-        <div class="hero-copy">
+      <div class="container">
+        <div class="hero-content">
           <h1>
-            <span>Beste Konditionen für</span>
+            Beste Konditionen für
             <span>Ihre Baufinanzierung</span>
           </h1>
 
@@ -1984,17 +3359,13 @@
           </ul>
 
           <div class="hero-actions">
-            <a class="btn hero-primary" href="#termin">
-              <span>Jetzt Zinsangebot erhalten</span>
-            </a>
-            <a class="btn hero-secondary" href="#leistungen">
-              <span>Leistungen ansehen</span>
-            </a>
+            <a class="btn hero-primary" href="kontakt.html">Jetzt Zinsangebot erhalten</a>
+            <a class="btn hero-secondary" href="#leistungen">Leistungen ansehen</a>
           </div>
         </div>
       </div>
     </section>
-    <section class="bank-logo-strip" aria-label="Partnerbanken">
+    <section class="bank-logo-strip" id="partnerbanken" aria-label="Partnerbanken">
       <div class="container">
         <div class="bank-logo-head">
           <h2>Unsere Finanzierungspartner</h2>
@@ -2098,7 +3469,7 @@
       </div>
     </section>
 
-    <section class="finance-trust-strip" id="partnerbanken" aria-label="Finanzierungskennzahlen">
+    <section class="finance-trust-strip" id="partnerbanken-zahlen" data-nav-active="#partnerbanken" aria-label="Finanzierungskennzahlen">
       <div class="container">
         <div class="finance-strip-box">
           <article class="finance-strip-item">
@@ -2184,152 +3555,20 @@
       </div>
     </section>
 
-    <section class="section" id="bewertungen">
-      <div class="container">
-        <div class="section-title">
-          <h2>Vertrauen entsteht durch gute Erfahrungen.</h2>
-          <p>Kundenstimmen können hier eingebunden werden – zum Beispiel aus Google-Bewertungen oder persönlichen Referenzen.</p>
-        </div>
-        <div class="reviews">
-          <article class="card">
-            <div class="stars">★★★★★</div>
-            <p class="quote">„Sehr verständliche Beratung, schnelle Rückmeldung und ein klarer Vergleich der Finanzierungsmöglichkeiten.“</p>
-            <div class="reviewer"><span class="avatar">M</span> Familie M.</div>
-          </article>
-          <article class="card">
-            <div class="stars">★★★★★</div>
-            <p class="quote">„Wir haben uns vom ersten Gespräch an gut aufgehoben gefühlt. Alle Schritte wurden transparent erklärt.“</p>
-            <div class="reviewer"><span class="avatar">A</span> A. Schneider</div>
-          </article>
-          <article class="card">
-            <div class="stars">★★★★★</div>
-            <p class="quote">„Kompetent, seriös und lösungsorientiert. Besonders die schnelle Terminabstimmung war sehr angenehm.“</p>
-            <div class="reviewer"><span class="avatar">K</span> K. Yilmaz</div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt" id="faq">
-      <div class="container">
-        <div class="section-title">
-          <h2>Häufige Fragen zur Baufinanzierung.</h2>
-          <p>Die wichtigsten Antworten für einen sicheren Start in Ihre Finanzierungsplanung.</p>
-        </div>
-        <div class="faq">
-          
-          <div class="faq-item">
-            <button class="faq-button" type="button" aria-expanded="false">
-              <span class="faq-question">Wie viel Eigenkapital ist sinnvoll?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-content">
-              <div class="faq-inner"><p>Mehr Eigenkapital kann die Konditionen verbessern und die monatliche Belastung reduzieren. Häufig ist es sinnvoll, mindestens die Kaufnebenkosten wie Grunderwerbsteuer, Notar, Grundbuch und gegebenenfalls Makler aus Eigenmitteln abzudecken.</p></div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-button" type="button" aria-expanded="false">
-              <span class="faq-question">Welche Unterlagen werden für die Baufinanzierung benötigt?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-content">
-              <div class="faq-inner">
-                <p>Typisch sind Einkommensnachweise, Kontoauszüge, Eigenkapitalnachweise, Ausweisdokumente sowie Objektunterlagen wie Exposé, Grundbuchauszug, Wohnflächenberechnung und Bau- oder Kaufunterlagen. Die genaue Liste wird passend zu Ihrem Vorhaben zusammengestellt.</p>
-              </div>
-            </div>
-          </div>
-          
-          
-          
-          
-          <div class="faq-item">
-            <button class="faq-button" type="button" aria-expanded="false">
-              <span class="faq-question">Wie schnell bekomme ich eine Finanzierungszusage?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-content">
-              <div class="faq-inner"><p>Das hängt davon ab, wie vollständig die Unterlagen sind und welche Bank angefragt wird. Je besser die Unterlagen vorbereitet sind, desto schneller kann eine verbindliche Prüfung erfolgen.</p></div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-button" type="button" aria-expanded="false">
-              <span class="faq-question">Ist die Erstberatung unverbindlich?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-content">
-              <div class="faq-inner"><p>Ja, die erste Einschätzung dient dazu, Ihre Ziele, Möglichkeiten und nächsten Schritte zu klären. Danach entscheiden Sie in Ruhe, ob und wie Sie weitermachen möchten.</p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="section" id="kontakt">
       <div class="container">
-        <div class="section-title">
-          <h2>Der nächste Schritt ist einfach.</h2>
-          <p>Buchen Sie direkt einen Termin oder senden Sie eine Anfrage. Ich melde mich schnellstmöglich zurück.</p>
-        </div>
-        <div class="contact-grid">
-          <aside class="contact-card">
-            <span class="eyebrow">Direkt erreichbar</span>
-            <h2>Lassen Sie uns über Ihre Ziele sprechen.</h2>
-            <p>Tragen Sie Ihre Kontaktdaten ein oder nutzen Sie die Terminbuchung. Telefonnummer, E-Mail und Adresse können hier einfach ersetzt werden.</p>
-            <div class="contact-lines">
-              <div class="contact-line"><span class="check">☎</span><div><strong>Telefon</strong><a href="tel:+490000000000">+49 000 000000</a></div></div>
-              <div class="contact-line"><span class="check">✉</span><div><strong>E-Mail</strong><a href="mailto:info@sami-finanzberatung.de">info@sami-finanzberatung.de</a></div></div>
-              <div class="contact-line"><span class="check">⌖</span><div><strong>Adresse</strong><span>Musterstraße 1, 00000 Musterstadt</span></div></div>
-            </div>
-          </aside>
-          <div class="form-card">
-            <form id="contactForm">
-              <div class="form-row">
-                <label>Vorname<input name="vorname" required placeholder="Ihr Vorname" /></label>
-                <label>Nachname<input name="nachname" required placeholder="Ihr Nachname" /></label>
-              </div>
-              <div class="form-row">
-                <label>E-Mail<input type="email" name="email" required placeholder="name@example.de" /></label>
-                <label>Telefon<input name="telefon" placeholder="+49 ..." /></label>
-              </div>
-              <label>Anliegen
-                <select name="anliegen" required>
-                  <option value="">Bitte auswählen</option>
-                  <option>Baufinanzierung</option>
-                  <option>Anschlussfinanzierung</option>
-                  <option>Modernisierung / Sanierung</option>
-                  <option>Geldanlage</option>
-                  <option>Altersvorsorge / Absicherung</option>
-                  <option>Privatkredit</option>
-                </select>
-              </label>
-              <label>Nachricht<textarea name="nachricht" placeholder="Worum geht es? Was ist Ihnen besonders wichtig?"></textarea></label>
-              <button class="btn primary" type="submit">Anfrage vorbereiten</button>
-              <p class="small-note">Hinweis: Dieses Formular öffnet aktuell Ihr E-Mail-Programm. Für den Live-Betrieb kann es an einen Formular-Dienst oder das Website-Backend angebunden werden.</p>
-            </form>
-          </div>
-        </div>
-
         <div class="booking-map" id="termin">
-          <div class="embed-box">
-            <header>
-              <h3>Terminbuchung mit Google-Kalender</h3>
-              <p>Hier kann Ihr Google-Calendar-Terminbuchungslink eingebunden werden.</p>
-            </header>
-            <div class="calendar-placeholder">
-              <div class="calendar-inner">
-                <div class="big-icon">📅</div>
-                <h3>Online-Termin buchen</h3>
-                <p class="small-note">Ersetzen Sie den Platzhalter-Link im HTML durch Ihren Google Calendar Appointment Schedule Link.</p>
-                <a class="btn gold" href="https://calendar.google.com/" target="_blank" rel="noopener">Terminlink öffnen</a>
+          <div class="image-cta-card" aria-label="Persönliche Finanzberatung">
+            <img src="png.png" alt="Persönliche Finanzberatung" loading="lazy" />
+            <div class="image-cta-panel">
+              <span class="image-cta-kicker">Persönliche Beratung</span>
+              <h3>Jetzt unverbindlich beraten lassen</h3>
+              <p>Ob Baufinanzierung, Anschlussfinanzierung oder Geldanlage – ich begleite Sie persönlich und finde die passende Lösung für Ihre Situation.</p>
+              <div class="image-cta-actions">
+                <a class="btn" href="https://www.google.com/maps" target="_blank" rel="noopener">Anfahrt berechnen ↗</a>
+                <a class="btn primary" href="kontakt.html#contactForm">Jetzt Anfrage senden</a>
               </div>
             </div>
-          </div>
-          <div class="embed-box">
-            <header>
-              <h3>Google Maps</h3>
-              <p>Die Karte ist als Platzhalter eingebunden und kann mit Ihrer echten Adresse ersetzt werden.</p>
-            </header>
-            <iframe title="Google Maps Standort" height="330" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Musterstra%C3%9Fe%201%2C%20Musterstadt&output=embed"></iframe>
           </div>
         </div>
       </div>
@@ -2374,43 +3613,41 @@
     const nav = document.getElementById('mainNav');
     const toggle = document.getElementById('menuToggle');
 
-    toggle?.addEventListener('click', () => nav.classList.toggle('open'));
-    document.querySelectorAll('nav a').forEach((link) => {
-      link.addEventListener('click', () => nav.classList.remove('open'));
-    });
-
-    const faqItems = Array.from(document.querySelectorAll('.faq-item'));
-
-    function setFaqState(item, isOpen) {
-      const button = item.querySelector('.faq-button');
-      const content = item.querySelector('.faq-content');
-
-      item.classList.toggle('open', isOpen);
-      button?.setAttribute('aria-expanded', String(isOpen));
-
-      if (!content) return;
-      content.style.maxHeight = isOpen ? content.scrollHeight + 'px' : '0px';
+    function setMobileMenuState(isOpen) {
+      if (!nav || !toggle) return;
+      nav.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      toggle.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+      toggle.textContent = isOpen ? '×' : '☰';
+      document.body.classList.toggle('menu-open', isOpen);
     }
 
-    faqItems.forEach((item) => {
-      const button = item.querySelector('.faq-button');
-      setFaqState(item, item.classList.contains('open'));
+    toggle?.addEventListener('click', () => {
+      setMobileMenuState(!nav.classList.contains('open'));
+    });
 
-      button?.addEventListener('click', () => {
-        const shouldOpen = !item.classList.contains('open');
-        setFaqState(item, shouldOpen);
-      });
+    document.querySelectorAll('#mainNav a').forEach((link) => {
+      link.addEventListener('click', () => setMobileMenuState(false));
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setMobileMenuState(false);
+    });
+
+    document.addEventListener('click', (event) => {
+      if (window.innerWidth > 980 || !nav?.classList.contains('open')) return;
+      const header = document.querySelector('header');
+      if (header && !header.contains(event.target)) setMobileMenuState(false);
     });
 
     window.addEventListener('resize', () => {
-      faqItems.forEach((item) => {
-        if (item.classList.contains('open')) setFaqState(item, true);
-      });
+      if (window.innerWidth > 980) setMobileMenuState(false);
     });
 
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    document.getElementById('contactForm').addEventListener('submit', (event) => {
+    const contactForm = document.getElementById('contactForm');
+    contactForm?.addEventListener('submit', (event) => {
       event.preventDefault();
       const data = new FormData(event.currentTarget);
       const subject = encodeURIComponent('Neue Anfrage über die Website');
@@ -2434,18 +3671,33 @@
     /* Active underline follows the current section while scrolling */
     (() => {
       const links = Array.from(document.querySelectorAll('#mainNav a[href^="#"]'));
-      const sections = links
+      const anchorSections = links
         .map((link) => {
           const target = document.querySelector(link.getAttribute('href'));
           return target ? { link, target } : null;
         })
         .filter(Boolean);
 
+      const extraSections = Array.from(document.querySelectorAll('[data-nav-active]'))
+        .map((target) => {
+          const href = target.getAttribute('data-nav-active');
+          const link = links.find((item) => item.getAttribute('href') === href);
+          return link ? { link, target } : null;
+        })
+        .filter(Boolean);
+
+      const sections = [...anchorSections, ...extraSections].sort((a, b) => {
+        if (a.target === b.target) return 0;
+        return a.target.compareDocumentPosition(b.target) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1;
+      });
+
       if (!sections.length) return;
 
       function setActiveNavLink() {
         const header = document.querySelector('header');
-        const offset = (header ? header.offsetHeight : 0) + 56;
+        /* Activate the underline a little before the section reaches the top. */
+        const earlyActivationOffset = 170;
+        const offset = (header ? header.offsetHeight : 0) + earlyActivationOffset;
         let activeItem = sections[0];
 
         sections.forEach((item) => {
@@ -2454,8 +3706,13 @@
           }
         });
 
+        /* At the very bottom, keep the last navigation item active. */
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8) {
+          activeItem = sections[sections.length - 1];
+        }
+
         links.forEach((link) => link.classList.remove('active'));
-        activeItem.link.classList.add('active');
+        if (activeItem) activeItem.link.classList.add('active');
       }
 
       setActiveNavLink();
@@ -2516,6 +3773,77 @@
       } else {
         startCounters();
       }
+    })();
+  </script>
+
+
+  <script>
+    /* Smooth reveal animation like the reference site */
+    (() => {
+      const revealSelectors = [
+        '.hero-copy',
+        '.services-title',
+        '.section-title',
+        '.bank-logo-head',
+        '.way-head',
+        '.benefits-head',
+        '.service-showcase-card',
+        '.bank-logo-item',
+        '.finance-strip-item',
+        '.partner-band',
+        '.way-step',
+        '.benefit-item',
+        '.card',
+        '.step',
+        '.feature-box',
+        '.reviews > *',
+        '.faq-item',
+        '.contact-card',
+        '.form-card',
+        '.embed-box'
+      ];
+
+      const revealItems = Array.from(
+        document.querySelectorAll(revealSelectors.join(','))
+      ).filter((item, index, list) => list.indexOf(item) === index);
+
+      if (!revealItems.length) return;
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      revealItems.forEach((item, index) => {
+        item.classList.add('smooth-reveal');
+
+        const localIndex = index % 6;
+        item.style.setProperty('--reveal-delay', `${Math.min(localIndex * 0.07, 0.35)}s`);
+      });
+
+      function showItem(item) {
+        item.classList.add('is-visible');
+
+        window.setTimeout(() => {
+          item.style.removeProperty('--reveal-delay');
+          item.style.willChange = 'auto';
+        }, 950);
+      }
+
+      if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+        revealItems.forEach(showItem);
+        return;
+      }
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          showItem(entry.target);
+          observer.unobserve(entry.target);
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -7% 0px'
+      });
+
+      revealItems.forEach((item) => revealObserver.observe(item));
     })();
   </script>
 
