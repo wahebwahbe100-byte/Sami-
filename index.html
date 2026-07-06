@@ -1035,6 +1035,102 @@
       }
     }
 
+
+    /* === Logo + background style matched to the uploaded reference === */
+    :root{
+      --ref-bg:#f6f2ec;
+      --ref-surface:#ffffff;
+      --ref-blue:#2f5dcc;
+      --ref-dark:#16213a;
+      --ref-line:rgba(17,24,39,.08);
+    }
+
+    body{
+      background:var(--ref-bg) !important;
+    }
+
+    header{
+      background:rgba(255,255,255,.82) !important;
+      backdrop-filter:blur(14px) !important;
+      -webkit-backdrop-filter:blur(14px) !important;
+      border-bottom:1px solid var(--ref-line) !important;
+      z-index:1000 !important;
+    }
+
+    .topbar{
+      background:var(--ref-dark) !important;
+      color:#ffffff !important;
+    }
+
+    .nav{
+      min-height:84px !important;
+      gap:20px !important;
+    }
+
+    .brand{
+      gap:14px !important;
+      min-width:0 !important;
+    }
+
+    .brand-logo{
+      width:58px !important;
+      height:58px !important;
+      flex:0 0 58px !important;
+      border-radius:50% !important;
+      background:#ffffff !important;
+      border:1px solid rgba(17,24,39,.08) !important;
+      box-shadow:0 12px 28px rgba(47,93,204,.18) !important;
+      object-fit:cover !important;
+      object-position:center !important;
+      padding:0 !important;
+      overflow:hidden !important;
+      display:block !important;
+    }
+
+    .brand-text strong{
+      color:#16213a !important;
+      font-size:24px !important;
+      font-weight:800 !important;
+      letter-spacing:-.03em !important;
+      line-height:1.08 !important;
+      white-space:nowrap !important;
+    }
+
+    .brand-text span{
+      color:#5f6777 !important;
+      font-size:12px !important;
+      letter-spacing:.14em !important;
+      text-transform:uppercase !important;
+      margin-top:4px !important;
+    }
+
+    .section.alt,
+    .financing-way,
+    .benefits-look{
+      background:linear-gradient(180deg, rgba(47,93,204,.08), rgba(255,255,255,.55)) !important;
+    }
+
+    .card,
+    .feature-box,
+    .form-card,
+    .embed-box,
+    .faq-item,
+    .review-card,
+    .trust-pill{
+      background:#ffffff !important;
+    }
+
+    @media (max-width:760px){
+      .brand-logo{
+        width:52px !important;
+        height:52px !important;
+        flex-basis:52px !important;
+      }
+      .brand-text strong{
+        font-size:20px !important;
+      }
+    }
+
   </style>
 </head>
 <body>
