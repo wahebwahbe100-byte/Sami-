@@ -1131,6 +1131,42 @@
       }
     }
 
+
+    /* === FULLSCREEN LOGO HERO === */
+    .logo-fullscreen-hero{
+      min-height:calc(100vh - 124px) !important;
+      width:100% !important;
+      padding:0 !important;
+      margin:0 !important;
+      background:#ffffff !important;
+      display:flex !important;
+      align-items:center !important;
+      justify-content:center !important;
+      overflow:hidden !important;
+      position:relative !important;
+    }
+    .logo-fullscreen-hero::before,
+    .logo-fullscreen-hero::after{
+      display:none !important;
+      content:none !important;
+    }
+    .fullscreen-logo-image{
+      width:100vw !important;
+      height:calc(100vh - 124px) !important;
+      object-fit:contain !important;
+      object-position:center center !important;
+      display:block !important;
+      background:#ffffff !important;
+    }
+    @media (max-width:760px){
+      .logo-fullscreen-hero{
+        min-height:calc(100vh - 86px) !important;
+      }
+      .fullscreen-logo-image{
+        height:calc(100vh - 86px) !important;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1163,30 +1199,8 @@
   </header>
 
   <main id="start">
-    <section class="hero" id="start" aria-label="Startbereich Baufinanzierung">
-      <div class="container hero-ref-wrap">
-        <div class="hero-copy">
-          <h1>
-            <span>Beste Konditionen für</span>
-            <span>Ihre Baufinanzierung</span>
-          </h1>
-
-          <ul class="hero-check-list" aria-label="Ihre Vorteile">
-            <li><span class="hero-check" aria-hidden="true">✓</span><strong>Vergleich von über 500 Partnerbanken</strong></li>
-            <li><span class="hero-check" aria-hidden="true">✓</span><strong>Persönliche Beratung digital und vor Ort</strong></li>
-            <li><span class="hero-check" aria-hidden="true">✓</span><strong>Maßgeschneiderte Lösung für Ihre Immobilie</strong></li>
-          </ul>
-
-          <div class="hero-actions">
-            <a class="btn hero-primary" href="#termin">
-              <span>Jetzt Zinsangebot erhalten</span>
-            </a>
-            <a class="btn hero-secondary" href="#leistungen">
-              <span>Leistungen ansehen</span>
-            </a>
-          </div>
-        </div>
-      </div>
+    <section class="hero logo-fullscreen-hero" id="start" aria-label="Sami Abu-Gheith Finanzberatung Logo Vollbild">
+      <img class="fullscreen-logo-image" src="logo.png" alt="Sami Abu-Gheith Finanzberatung Logo" />
     </section>
     <section class="bank-logo-strip" aria-label="Partnerbanken">
       <div class="container">
