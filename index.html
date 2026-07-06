@@ -936,6 +936,30 @@
       border-bottom: 1px solid rgba(7, 27, 73, .08);
     }
 
+
+    .bank-logo-head {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 24px;
+    }
+
+    .bank-logo-head h2 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: clamp(30px, 3vw, 44px);
+      line-height: 1.08;
+      font-weight: 900;
+      letter-spacing: -.04em;
+    }
+
+    .bank-logo-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
     .bank-logo-grid {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
@@ -1040,13 +1064,20 @@
       </div>
     </section>
     <section class="bank-logo-strip" aria-label="Partnerbanken">
-      <div class="container bank-logo-grid">
-        <div class="bank-logo-item"><img src="images/ing.png" alt="ING" loading="lazy" /></div>
-        <div class="bank-logo-item"><img src="images/commerzbank.png" alt="Commerzbank" loading="lazy" /></div>
-        <div class="bank-logo-item"><img src="images/deutsche-bank.png" alt="Deutsche Bank" loading="lazy" /></div>
-        <div class="bank-logo-item"><img src="images/sparkasse.png" alt="Sparkasse" loading="lazy" /></div>
-        <div class="bank-logo-item"><img src="images/dsl-bank.png" alt="DSL Bank" loading="lazy" /></div>
-        <div class="bank-logo-item"><img src="images/interhyp.png" alt="Interhyp" loading="lazy" /></div>
+      <div class="container">
+        <div class="bank-logo-head">
+          <h2>Unsere Finanzierungspartner</h2>
+          <p>Für den besten Zinssatz vergleichen wir über 500 Finanzierungspartner.</p>
+        </div>
+
+        <div class="bank-logo-grid">
+          <div class="bank-logo-item"><img src="images/ing.png" alt="ING" loading="lazy" /></div>
+          <div class="bank-logo-item"><img src="images/commerzbank.png" alt="Commerzbank" loading="lazy" /></div>
+          <div class="bank-logo-item"><img src="images/deutsche-bank.png" alt="Deutsche Bank" loading="lazy" /></div>
+          <div class="bank-logo-item"><img src="images/sparkasse.png" alt="Sparkasse" loading="lazy" /></div>
+          <div class="bank-logo-item"><img src="images/dsl-bank.png" alt="DSL Bank" loading="lazy" /></div>
+          <div class="bank-logo-item"><img src="images/interhyp.png" alt="Interhyp" loading="lazy" /></div>
+        </div>
       </div>
     </section>
 
