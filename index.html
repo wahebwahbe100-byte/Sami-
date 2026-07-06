@@ -1132,44 +1132,25 @@
     }
 
 
-    /* FINAL: logo.png appears fully inside the logo area, without cropping */
-    .brand{
-      gap:0 !important;
-      min-width:min(340px, 62vw) !important;
-      flex:0 1 auto !important;
-    }
 
+    /* Logo fix only: make the logo bigger and show the full image without cropping */
     .brand-logo{
-      width:min(330px, 62vw) !important;
-      height:auto !important;
-      max-height:74px !important;
-      flex:0 1 auto !important;
-      border-radius:0 !important;
-      background:transparent !important;
-      border:0 !important;
-      box-shadow:none !important;
+      width:78px !important;
+      height:78px !important;
+      flex:0 0 78px !important;
       object-fit:contain !important;
-      object-position:left center !important;
-      padding:0 !important;
+      object-position:center center !important;
+      padding:3px !important;
       overflow:visible !important;
-      display:block !important;
-    }
-
-    .brand-text{
-      display:none !important;
     }
 
     @media (max-width:760px){
-      .brand{
-        min-width:0 !important;
-        max-width:calc(100% - 62px) !important;
-      }
-
       .brand-logo{
-        width:min(245px, 72vw) !important;
-        height:auto !important;
-        max-height:58px !important;
-        flex:0 1 auto !important;
+        width:68px !important;
+        height:68px !important;
+        flex-basis:68px !important;
+        object-fit:contain !important;
+        padding:3px !important;
       }
     }
 
@@ -1186,6 +1167,7 @@
     <div class="container nav">
       <a class="brand" href="#start" aria-label="Sami Abu-Gheith Finanzberatung Startseite">
         <img class="brand-logo" src="logo.png" alt="Sami Abu-Gheith Finanzberatung Logo" />
+        <span class="brand-text"><strong>Sami Abu-Gheith</strong><span>FINANZBERATUNG</span></span>
       </a>
       <nav id="mainNav" aria-label="Hauptnavigation">
         <ul>
